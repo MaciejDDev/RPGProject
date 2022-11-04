@@ -33,7 +33,9 @@ public class ThirdPersonMover : MonoBehaviour
         Vector3 offset = transform.rotation * velocity;
         _rigidbody.MovePosition(transform.position + offset);
         
-        _animator.SetFloat("Speed", vertical, 0.1f, Time.deltaTime);
+        _animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
+        _animator.SetFloat("Horizontal", horizontal, 0.1f, Time.deltaTime);
+
 
     }
 }
