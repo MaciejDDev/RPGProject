@@ -15,6 +15,8 @@ public class DialogController : MonoBehaviour
 
 
     Story _story;
+    [SerializeField] Animator _animator;
+
     // Start is called before the first frame update
     [ContextMenu("Start Dialog")]
     public void StartDialog(TextAsset dialog)
@@ -27,8 +29,11 @@ public class DialogController : MonoBehaviour
     {
         StringBuilder storyTextBuilder = new StringBuilder();
         while(_story.canContinue)
+        {
             storyTextBuilder.AppendLine(_story.Continue());
-
+            HandleTags();
+        }
+            
         _storyText.SetText(storyTextBuilder);
 
         for (int i = 0; i < _choiceButtons.Length; i++)
@@ -46,7 +51,19 @@ public class DialogController : MonoBehaviour
                     RefreshView();
                 });
             }
+        }   
+    }
+    void HandleTags()
+    {
+        foreach (var tag in _story.currentTags)
+        {
+            if(tag == "OpenDoor")
+                OpenDoor();
         }
     }
 
+    void OpenDoor()
+    {
+        _animator.SetTrigger("Open");
+    }
 }

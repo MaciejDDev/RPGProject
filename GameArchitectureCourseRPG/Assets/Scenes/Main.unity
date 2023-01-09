@@ -405,6 +405,7 @@ MonoBehaviour:
   - {fileID: 1067144316}
   - {fileID: 1856894072}
   - {fileID: 774420022}
+  _animator: {fileID: 1764210877}
 --- !u!1 &485484435
 GameObject:
   m_ObjectHideFlags: 0
