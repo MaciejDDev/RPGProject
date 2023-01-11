@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ThirdPersonMover : MonoBehaviour
 {
@@ -8,20 +9,19 @@ public class ThirdPersonMover : MonoBehaviour
     [SerializeField] float _moveSpeed = 5f;
     Rigidbody _rigidbody;
     Animator _animator;
+    float _mouseMovement;
 
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
     }
-    void Update()
-    {
-        var mouseMovement = Input.GetAxis("MouseX");
-        transform.Rotate(0, mouseMovement * Time.deltaTime * _turnSpeed, 0);
-    }
-
+    void Update() => _mouseMovement += Input.GetAxis("MouseX");
     void FixedUpdate() 
     {
+        transform.Rotate(0, _mouseMovement * Time.deltaTime * _turnSpeed, 0);
+        _mouseMovement = 0;
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");    
         if (Input.GetKey(KeyCode.LeftShift))
