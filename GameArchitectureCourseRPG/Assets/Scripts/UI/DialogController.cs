@@ -13,9 +13,15 @@ public class DialogController : MonoBehaviour
     [SerializeField] TMP_Text _storyText;
     [SerializeField] Button[] _choiceButtons;
 
-
     Story _story;
-    [SerializeField] Animator _animator;
+    CanvasGroup _canvasGroup;
+
+    void Awake()
+    {
+        _canvasGroup = GetComponent<CanvasGroup>();
+        ToggleCanvasOff();
+    }
+   
 
     // Start is called before the first frame update
     [ContextMenu("Start Dialog")]
@@ -23,6 +29,20 @@ public class DialogController : MonoBehaviour
     {
         _story = new Story(dialog.text);
         RefreshView();
+        ToggleCanvasOn();
+    }
+
+    void ToggleCanvasOn()
+    {
+        _canvasGroup.alpha = 0.5f;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
+    }
+    void ToggleCanvasOff()
+    {
+        _canvasGroup.alpha = 0.0f;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
     }
 
     private void RefreshView()
@@ -36,23 +56,33 @@ public class DialogController : MonoBehaviour
             
         _storyText.SetText(storyTextBuilder);
 
+        if(_story.currentChoices.Count == 0)
+            ToggleCanvasOff();
+        else
+
+            ShowChoiceButtons();
+    }
+
+    void ShowChoiceButtons()
+    {
         for (int i = 0; i < _choiceButtons.Length; i++)
         {
             var button = _choiceButtons[i];
             button.gameObject.SetActive(i < _story.currentChoices.Count);
             button.onClick.RemoveAllListeners();
-            if(i < _story.currentChoices.Count)
+            if (i < _story.currentChoices.Count)
             {
                 var choice = _story.currentChoices[i];
                 button.GetComponentInChildren<TMP_Text>().SetText(choice.text);
-                button.onClick.AddListener(call: () => 
+                button.onClick.AddListener(call: () =>
                 {
                     _story.ChooseChoiceIndex(choice.index);
                     RefreshView();
                 });
             }
-        }   
+        }
     }
+
     void HandleTags()
     {
         foreach (var tag in _story.currentTags)
