@@ -724,6 +724,8 @@ GameObject:
   - component: {fileID: 460510376}
   - component: {fileID: 460510375}
   - component: {fileID: 460510374}
+  - component: {fileID: 460510380}
+  - component: {fileID: 460510381}
   m_Layer: 0
   m_Name: Control Panel
   m_TagString: Untagged
@@ -1619,13 +1621,39 @@ Transform:
   m_GameObject: {fileID: 460510373}
   m_LocalRotation: {x: -0, y: -0.30250204, z: -0, w: 0.9531488}
   m_LocalPosition: {x: 14.737905, y: -0.08065772, z: -10.138575}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 827182024}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -35.216, z: 0}
+--- !u!114 &460510380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460510373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a229db2c09bcc41a90bbdec3b9e504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dialog: {fileID: 4900000, guid: 0f52553cf861aa24a988d9314b95c5c3, type: 3}
+--- !u!135 &460510381
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460510373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.54
+  m_Center: {x: 0.007086128, y: 0.875, z: 0}
 --- !u!1 &485484435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,7 +1899,7 @@ GameObject:
   - component: {fileID: 603009253}
   - component: {fileID: 603009256}
   m_Layer: 0
-  m_Name: CM vcam2 - Green Door
+  m_Name: VC - Green Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2310,7 +2338,7 @@ GameObject:
   - component: {fileID: 664130640}
   - component: {fileID: 664130639}
   m_Layer: 0
-  m_Name: CM vcam1 - Shoulder view
+  m_Name: VC - Shoulder view
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5323,7 +5351,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
@@ -5365,7 +5392,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 83.14
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -5390,8 +5417,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.047121435, y: 0.9435421, z: -0.15343735, w: 0.28976688}
-  m_LocalPosition: {x: 5.6220374, y: 4.135043, z: -0.58284664}
+  m_LocalRotation: {x: 0, y: -0.62949777, z: 0, w: 0.7770024}
+  m_LocalPosition: {x: -2.3557208, y: 1.7069999, z: 2.6554492}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5399,44 +5426,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20.8, y: -77.453, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 180258522}
-  m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    ModeOverride: 0
-    LensShift: {x: 0, y: 0}
-    GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 1830846800}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5464,7 +5453,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: 837ba48f1bb075a42b8ba17b4ced4376, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9035,7 +9024,7 @@ GameObject:
   - component: {fileID: 1726490759}
   - component: {fileID: 1726490760}
   m_Layer: 0
-  m_Name: CM BlendListCamera1
+  m_Name: BC - Control Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10002,7 +9991,7 @@ MonoBehaviour:
   _gameEvent: {fileID: 11400000, guid: 6a05f6af04d9ec24382e74484bb75caf, type: 2}
 --- !u!1 &1830846799
 GameObject:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10021,7 +10010,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &1830846800
 Transform:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10036,7 +10025,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1830846801
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10048,7 +10037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1830846803
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10075,7 +10064,7 @@ MonoBehaviour:
   m_CenterOnActivate: 1
 --- !u!114 &1830846804
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14766,4 +14755,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a229db2c09bcc41a90bbdec3b9e504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialog: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
+  _dialog: {fileID: 4900000, guid: 724a336e7ea7c754095087272bb7f909, type: 3}
