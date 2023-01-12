@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Main Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: 
-    m_To: CM vcam2 - Green Door
+  - m_From: '**ANY CAMERA**'
+    m_To: VC - Green Door
     m_Blend:
       m_Style: 0
       m_Time: 2
