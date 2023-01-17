@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuestPanel : MonoBehaviour
+public class QuestPanel : ToggleablePanel
 {
     [SerializeField] Quest _selectedQuest;
     [SerializeField] Step _selectedStep;

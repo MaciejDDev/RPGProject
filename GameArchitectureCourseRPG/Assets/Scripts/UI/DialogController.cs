@@ -7,21 +7,14 @@ using TMPro;
 using Ink.Runtime;
 using System;
 
-public class DialogController : MonoBehaviour
+public class DialogController : ToggleablePanel
 {
     [SerializeField] TextAsset _dialog;
     [SerializeField] TMP_Text _storyText;
     [SerializeField] Button[] _choiceButtons;
 
     Story _story;
-    CanvasGroup _canvasGroup;
-
-    void Awake()
-    {
-        _canvasGroup = GetComponent<CanvasGroup>();
-        ToggleCanvasOff();
-    }
-   
+  
 
     // Start is called before the first frame update
     [ContextMenu("Start Dialog")]
@@ -29,21 +22,10 @@ public class DialogController : MonoBehaviour
     {
         _story = new Story(dialog.text);
         RefreshView();
-        ToggleCanvasOn();
+        Show();
     }
 
-    void ToggleCanvasOn()
-    {
-        _canvasGroup.alpha = 0.5f;
-        _canvasGroup.interactable = true;
-        _canvasGroup.blocksRaycasts = true;
-    }
-    void ToggleCanvasOff()
-    {
-        _canvasGroup.alpha = 0.0f;
-        _canvasGroup.interactable = false;
-        _canvasGroup.blocksRaycasts = false;
-    }
+    
 
     private void RefreshView()
     {
@@ -57,7 +39,7 @@ public class DialogController : MonoBehaviour
         _storyText.SetText(storyTextBuilder);
 
         if(_story.currentChoices.Count == 0)
-            ToggleCanvasOff();
+            Hide();
         else
 
             ShowChoiceButtons();
