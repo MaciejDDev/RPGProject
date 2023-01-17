@@ -10,7 +10,7 @@ I've been waiting forever, I'm glad you're finally here.
     
     Go to the panel, it's in the back room. #E.ShowBackRoom
         *   Why can't you do that? 
-            I'm too wide..
+            I'm too wide.. #Q.InspectThePanel
             **  Okay, I'm on it! #E.HideBackRoom
                 Thanks! -> END
 - -> END
