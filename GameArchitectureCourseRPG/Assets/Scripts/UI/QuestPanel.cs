@@ -25,6 +25,7 @@ public class QuestPanel : ToggleablePanel
 
         _selectedStep = _selectedQuest.Steps.FirstOrDefault();
         DisplayStepInstructionsAndObjectives();
+        Show();
     }
 
     public void SelectQuest(Quest quest)
