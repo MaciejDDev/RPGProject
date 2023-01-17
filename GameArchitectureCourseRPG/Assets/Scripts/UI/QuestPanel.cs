@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,12 @@ public class QuestPanel : MonoBehaviour
 
         _selectedStep = _selectedQuest.Steps.FirstOrDefault();
         DisplayStepInstructionsAndObjectives();
+    }
+
+    public void SelectQuest(Quest quest)
+    {
+        _selectedQuest = quest;
+        Bind();
     }
 
     private void DisplayStepInstructionsAndObjectives()
