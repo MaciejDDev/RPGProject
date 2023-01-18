@@ -18,7 +18,7 @@ public class Quest : ScriptableObject
     
     int _currentStepIndex;
 
-    public event Action Progressed;
+    public event Action Changed;
     
     public List<Step> Steps;
 
@@ -30,16 +30,35 @@ public class Quest : ScriptableObject
 
     public Step CurrentStep => Steps[_currentStepIndex];
 
-    private void OnEnable() => _currentStepIndex = 0;
+    private void OnEnable()
+    {
+        _currentStepIndex = 0;
+        foreach (var step in Steps)
+        {
+            foreach(var objective in step.Objectives)
+            {
+                if (objective.GameFlag != null)
+                    objective.GameFlag.Changed += HandleFlagChanged;
+            }
+        }
+    }
+
+    private void HandleFlagChanged()
+    {
+        TryProgress();
+        Changed?.Invoke();
+    }
+
     public void TryProgress()
     {
         var currentStep = GetCurrentStep();
         if(currentStep.HasAllObjectivesCompleted())
         {
             _currentStepIndex++;
-            Progressed?.Invoke();
+            Changed?.Invoke();
             //do whatever we do when a quest progresses like update the UI
         }
+        
     }
     
     private Step GetCurrentStep() => Steps[_currentStepIndex];
@@ -64,6 +83,7 @@ public class Objective
 {
     [SerializeField] ObjectiveType _objectiveType;
     [SerializeField] GameFlag _gameFlag;
+    public GameFlag GameFlag =>  _gameFlag;
 
     public enum ObjectiveType
     {
@@ -84,6 +104,8 @@ public class Objective
         }
             
     }
+
+
     public override string ToString()
     {
         switch(_objectiveType)

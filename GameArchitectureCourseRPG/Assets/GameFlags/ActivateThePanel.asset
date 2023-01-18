@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69c4ef1477d605d4b96527ed17fe84ef, type: 3}
-  m_Name: LookedAtDoor
+  m_Name: ActivateThePanel
   m_EditorClassIdentifier: 
-  Value: 0
+  Value: 1
