@@ -17,6 +17,8 @@ public class Quest : ScriptableObject
     [SerializeField] string _notes;
     
     int _currentStepIndex;
+
+    public event Action Progressed;
     
     public List<Step> Steps;
 
@@ -26,12 +28,16 @@ public class Quest : ScriptableObject
 
     public Sprite Sprite => _sprite;
 
+    public Step CurrentStep => Steps[_currentStepIndex];
+
+    private void OnEnable() => _currentStepIndex = 0;
     public void TryProgress()
     {
         var currentStep = GetCurrentStep();
         if(currentStep.HasAllObjectivesCompleted())
         {
             _currentStepIndex++;
+            Progressed?.Invoke();
             //do whatever we do when a quest progresses like update the UI
         }
     }
@@ -57,7 +63,7 @@ public class Step
 public class Objective
 {
     [SerializeField] ObjectiveType _objectiveType;
-
+    [SerializeField] GameFlag _gameFlag;
 
     public enum ObjectiveType
     {
@@ -65,7 +71,27 @@ public class Objective
         Item,
         Kill,
     }
-    public bool IsCompleted { get; }
-    public override string ToString() => _objectiveType.ToString();
+    public bool IsCompleted 
+    {
+        get
+        {
+            switch(_objectiveType)
+            {
+                case ObjectiveType.Flag: return _gameFlag.Value;
+                default: return false;
+
+            }
+        }
+            
+    }
+    public override string ToString()
+    {
+        switch(_objectiveType)
+        {
+            case ObjectiveType.Flag: return _gameFlag.name;
+            default: return _objectiveType.ToString();
+
+        }
+    }
  
 }
