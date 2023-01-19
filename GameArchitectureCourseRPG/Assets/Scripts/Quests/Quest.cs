@@ -37,8 +37,10 @@ public class Quest : ScriptableObject
         {
             foreach(var objective in step.Objectives)
             {
-                if (objective.GameFlag != null)
-                    objective.GameFlag.Changed += HandleFlagChanged;
+                if (objective.BoolGameFlag != null)
+                    objective.BoolGameFlag.Changed += HandleFlagChanged;
+                if (objective.IntGameFlag != null)
+                    objective.IntGameFlag.Changed += HandleFlagChanged;
             }
         }
     }
@@ -82,12 +84,19 @@ public class Step
 public class Objective
 {
     [SerializeField] ObjectiveType _objectiveType;
-    [SerializeField] GameFlag _gameFlag;
-    public GameFlag GameFlag =>  _gameFlag;
+    [SerializeField] BoolGameFlag _boolGameFlag;
+    [Header("Int Game Flags")]
+    [SerializeField] IntGameFlag _intGameFlag;
+    [Tooltip("Required amount for the counted int flag.")]
+    [SerializeField] int _required;
+
+    public BoolGameFlag BoolGameFlag =>  _boolGameFlag;
+    public IntGameFlag IntGameFlag =>  _intGameFlag;
 
     public enum ObjectiveType
     {
-        Flag,
+        BoolFlag,
+        CountedIntFlag,
         Item,
         Kill,
     }
@@ -97,7 +106,8 @@ public class Objective
         {
             switch(_objectiveType)
             {
-                case ObjectiveType.Flag: return _gameFlag.Value;
+                case ObjectiveType.BoolFlag: return _boolGameFlag.Value;
+                case ObjectiveType.CountedIntFlag: return _intGameFlag.Value >= _required;
                 default: return false;
 
             }
@@ -110,7 +120,8 @@ public class Objective
     {
         switch(_objectiveType)
         {
-            case ObjectiveType.Flag: return _gameFlag.name;
+            case ObjectiveType.BoolFlag: return _boolGameFlag.name;
+            case ObjectiveType.CountedIntFlag: return $"{_intGameFlag.name} ({_intGameFlag.Value}/{_required})";
             default: return _objectiveType.ToString();
 
         }
