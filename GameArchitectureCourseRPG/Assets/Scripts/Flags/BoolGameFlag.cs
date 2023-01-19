@@ -6,21 +6,13 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName ="Bool Game Flag")]
-public class BoolGameFlag : ScriptableObject
+public class BoolGameFlag : GameFlag<bool>
 {
-    
-    public event Action Changed;
-
-    public bool Value { get; private set; }
-
-    void OnEnable() => Value = default;
-
-    void OnDisable() => Value = default;
-
     public void Set(bool value)
     { 
         Value = value;
-        Changed?.Invoke();
+        SendChanged();
+
     }
 
 }

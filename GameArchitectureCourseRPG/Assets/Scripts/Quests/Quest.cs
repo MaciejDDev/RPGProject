@@ -37,10 +37,9 @@ public class Quest : ScriptableObject
         {
             foreach(var objective in step.Objectives)
             {
-                if (objective.BoolGameFlag != null)
-                    objective.BoolGameFlag.Changed += HandleFlagChanged;
-                if (objective.IntGameFlag != null)
-                    objective.IntGameFlag.Changed += HandleFlagChanged;
+                if (objective.GameFlag != null)
+                    objective.GameFlag.Changed += HandleFlagChanged;
+
             }
         }
     }
@@ -78,53 +77,4 @@ public class Step
     {
         return Objectives.TrueForAll(t => t.IsCompleted);
     }
-}
-
-[Serializable]
-public class Objective
-{
-    [SerializeField] ObjectiveType _objectiveType;
-    [SerializeField] BoolGameFlag _boolGameFlag;
-    [Header("Int Game Flags")]
-    [SerializeField] IntGameFlag _intGameFlag;
-    [Tooltip("Required amount for the counted int flag.")]
-    [SerializeField] int _required;
-
-    public BoolGameFlag BoolGameFlag =>  _boolGameFlag;
-    public IntGameFlag IntGameFlag =>  _intGameFlag;
-
-    public enum ObjectiveType
-    {
-        BoolFlag,
-        CountedIntFlag,
-        Item,
-        Kill,
-    }
-    public bool IsCompleted 
-    {
-        get
-        {
-            switch(_objectiveType)
-            {
-                case ObjectiveType.BoolFlag: return _boolGameFlag.Value;
-                case ObjectiveType.CountedIntFlag: return _intGameFlag.Value >= _required;
-                default: return false;
-
-            }
-        }
-            
-    }
-
-
-    public override string ToString()
-    {
-        switch(_objectiveType)
-        {
-            case ObjectiveType.BoolFlag: return _boolGameFlag.name;
-            case ObjectiveType.CountedIntFlag: return $"{_intGameFlag.name} ({_intGameFlag.Value}/{_required})";
-            default: return _objectiveType.ToString();
-
-        }
-    }
- 
 }
