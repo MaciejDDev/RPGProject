@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Counted Int Game Flag")]
+[CreateAssetMenu(menuName = "Game Flag/Counted Int")]
 public class IntGameFlag : GameFlag<int>
 {
  
@@ -12,10 +12,6 @@ public class IntGameFlag : GameFlag<int>
         SendChanged();
     }
 
-    internal void Set(int value)
-    {
-        Value = value;
-        SendChanged();
-    }
+    
 }
 

@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "String Game Flag")]
+[CreateAssetMenu(menuName = "Game Flag/String")]
 public class StringGameFlag : GameFlag<string>
 {
-    public void Set(string value)
-    {
-        Value = value;
-        SendChanged();
-
-    }
+    
 
 }
