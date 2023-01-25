@@ -5,6 +5,8 @@ using UnityEngine;
 public class InspectionPanel : MonoBehaviour
 {
     [SerializeField] TMP_Text _hintText;
+    [SerializeField] TMP_Text _progressText;
+
 
     private void OnEnable()
     {
@@ -15,4 +17,10 @@ public class InspectionPanel : MonoBehaviour
     void OnDisable() => Inspectable.InspectablesInRangeChanged -= UpdateTextState;
 
     void UpdateTextState(bool enableHint) => _hintText.enabled = enableHint;
+
+    private void Update()
+    {
+        if(InspectionManager.Inspecting)
+        _progressText.SetText(InspectionManager.InspectionProgress.ToString());
+    }
 }

@@ -11,6 +11,9 @@ public class Inspectable : MonoBehaviour
     float _timeInspected;
 
     public static IReadOnlyCollection<Inspectable> InspectablesInRange => _inspectablesInRange;
+
+    public float InspectionProgress => _timeInspected / _timeToInspect;
+
     public static event Action<bool> InspectablesInRangeChanged;
 
 
