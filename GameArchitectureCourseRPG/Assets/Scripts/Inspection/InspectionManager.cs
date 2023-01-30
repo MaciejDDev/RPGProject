@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ public class InspectionManager : MonoBehaviour
 
     public static float InspectionProgress => _currentInspectable?.InspectionProgress ?? 0f;
 
+
     void Update()
     {
        if(Input.GetKeyDown(KeyCode.E)) 
@@ -21,4 +23,21 @@ public class InspectionManager : MonoBehaviour
         else
             _currentInspectable = null;
     }
+    public static void Bind(List<InspectableData> datas)
+    {
+        var allInspectables = GameObject.FindObjectsOfType<Inspectable>(true);
+        foreach (var inspectable in allInspectables)
+        {
+            var data = datas.FirstOrDefault(t => t.Name == inspectable.name);
+            if(data == null)
+            {
+                data= new InspectableData(); { data.Name = inspectable.name;}
+                datas.Add(data);
+            }
+            inspectable.Bind(data);
+        }
+    }
+
+
+
 }

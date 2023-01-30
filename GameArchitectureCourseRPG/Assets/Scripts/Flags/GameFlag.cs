@@ -30,7 +30,7 @@ public class GameFlag<T> : GameFlag
     public void Set(T value)
     {
         Value = value;
-        GameFlagData.Value = Value.ToString();
+        GameFlagData.Value = Value?.ToString();
         SendChanged();
 
     }
