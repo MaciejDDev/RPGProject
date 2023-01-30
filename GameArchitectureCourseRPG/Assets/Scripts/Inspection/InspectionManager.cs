@@ -7,7 +7,7 @@ public class InspectionManager : MonoBehaviour
 {
     static Inspectable _currentInspectable;
 
-    public static bool Inspecting => _currentInspectable != null && _currentInspectable.isActiveAndEnabled;
+    public static bool Inspecting => _currentInspectable != null && !_currentInspectable.WasFullyInspected;
 
     public static float InspectionProgress => _currentInspectable?.InspectionProgress ?? 0f;
 
