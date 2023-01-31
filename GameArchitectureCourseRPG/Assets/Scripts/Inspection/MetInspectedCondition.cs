@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MetInspectedCondition : MonoBehaviour, IMet
 {
@@ -8,4 +9,13 @@ public class MetInspectedCondition : MonoBehaviour, IMet
 
 
     public bool Met() => _requiredInspectable.WasFullyInspected;
+
+    void OnDrawGizmos()
+    {
+        if(_requiredInspectable != null)
+        {
+            Gizmos.color = Met() ? Color.green : Color.red;
+            Gizmos.DrawLine(transform.position, _requiredInspectable.transform.position);
+        }
+    }
 }
