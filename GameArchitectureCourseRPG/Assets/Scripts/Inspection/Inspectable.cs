@@ -13,7 +13,7 @@ public class Inspectable : MonoBehaviour
     
     
     InspectableData _data;
-    MetInspectedCondition[] _allConditions;
+    IMet[] _allConditions;
 
     public static IReadOnlyCollection<Inspectable> InspectablesInRange => _inspectablesInRange;
     public static event Action<bool> InspectablesInRangeChanged;
@@ -23,7 +23,7 @@ public class Inspectable : MonoBehaviour
     public bool WasFullyInspected => InspectionProgress >= 1f;
 
 
-    void Awake() => _allConditions = GetComponents<MetInspectedCondition>();
+    void Awake() => _allConditions = GetComponents<IMet>();
     public bool MeetsConditions()
     {
         

@@ -18288,6 +18288,7 @@ GameObject:
   - component: {fileID: 1071138343}
   - component: {fileID: 1071138342}
   - component: {fileID: 1071138348}
+  - component: {fileID: 1071138349}
   m_Layer: 0
   m_Name: InspectablePurpleBox
   m_TagString: Untagged
@@ -18427,7 +18428,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e909c15fb21648b78be1829672b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requiredInspectable: {fileID: 1744675825}
+  _requiredInspectable: {fileID: 1227518813}
+--- !u!114 &1071138349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071138341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6eaf6c1f637274f90d162cf9784249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredFlag: {fileID: 11400000, guid: e88a638405e37ec4ba2eb6facc09b73d, type: 2}
 --- !u!1 &1088964381
 GameObject:
   m_ObjectHideFlags: 0
