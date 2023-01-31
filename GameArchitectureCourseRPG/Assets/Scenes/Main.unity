@@ -7869,6 +7869,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 856ab4a8702441b4190f774d5f75e65f, type: 2}
   - {fileID: 11400000, guid: 7d794e3be1469b843b82d572801e7545, type: 2}
   - {fileID: 11400000, guid: 9462955b99e31bd4c981992a8c022fd1, type: 2}
+  - {fileID: 11400000, guid: e88a638405e37ec4ba2eb6facc09b73d, type: 2}
   - {fileID: 11400000, guid: 5e52baca7b8855f47bf0d25e9fe468e0, type: 2}
   - {fileID: 11400000, guid: cf61dc36012d217408525ee722d699b2, type: 2}
 --- !u!4 &503007710
@@ -12813,7 +12814,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24384
+  m_Name: pb_Mesh28672
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14827,7 +14828,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _required: {fileID: 0}
 --- !u!1 &924370044
 GameObject:
   m_ObjectHideFlags: 0
@@ -18287,6 +18287,7 @@ GameObject:
   - component: {fileID: 1071138344}
   - component: {fileID: 1071138343}
   - component: {fileID: 1071138342}
+  - component: {fileID: 1071138348}
   m_Layer: 0
   m_Name: InspectablePurpleBox
   m_TagString: Untagged
@@ -18335,7 +18336,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _required: {fileID: 1227518813}
 --- !u!65 &1071138344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18415,6 +18415,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1071138348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071138341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425e909c15fb21648b78be1829672b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredInspectable: {fileID: 1744675825}
 --- !u!1 &1088964381
 GameObject:
   m_ObjectHideFlags: 0
@@ -18532,7 +18545,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27378
+  m_Name: pb_Mesh28770
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20184,7 +20197,6 @@ MonoBehaviour:
   OnInspectionCompleted:
     m_PersistentCalls:
       m_Calls: []
-  _required: {fileID: 0}
 --- !u!1 &1227518811
 GameObject:
   m_ObjectHideFlags: 0
@@ -20247,7 +20259,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _required: {fileID: 1744675825}
 --- !u!65 &1227518814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21384,7 +21395,6 @@ MonoBehaviour:
   OnInspectionCompleted:
     m_PersistentCalls:
       m_Calls: []
-  _required: {fileID: 0}
 --- !u!1 &1252642044
 GameObject:
   m_ObjectHideFlags: 0
@@ -26445,7 +26455,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _required: {fileID: 0}
 --- !u!65 &1744675826
 BoxCollider:
   m_ObjectHideFlags: 0
