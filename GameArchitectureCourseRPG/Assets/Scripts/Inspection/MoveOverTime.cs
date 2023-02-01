@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MoveOverTime : MonoBehaviour
 {
+    [SerializeField] float _duration = 1f;
     [SerializeField] Vector3 _magnitude = Vector3.down;
+    [SerializeField] AnimationCurve _curve = AnimationCurve.Linear(0f, 0f, 1, 1);
 
     Vector3 _startingPosition;
     Vector3 _endingPosition;
@@ -22,7 +24,9 @@ public class MoveOverTime : MonoBehaviour
     void Update()
     {
         _elapsed += Time.deltaTime;
-        transform.position = Vector3.Lerp(_startingPosition, _endingPosition, _elapsed);
+        float pctElapsed = _elapsed / _duration;
+        float pctOnCurve = _curve.Evaluate(pctElapsed);
+        transform.position = Vector3.Lerp(_startingPosition, _endingPosition, pctOnCurve);
         
     }
 }
