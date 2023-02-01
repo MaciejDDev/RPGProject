@@ -18,15 +18,15 @@ public class InspectionPanel : MonoBehaviour
         _hintText.enabled = false;
         _completedInspectionText.enabled = false;
         Inspectable.InspectablesInRangeChanged += UpdateTextState;
-        Inspectable.AnyInspectionComplete += HandleAnyInspectionComplete;
+        Inspectable.AnyInspectionComplete += ShowCompletedInspectionText;
     }
 
-    private void HandleAnyInspectionComplete(Inspectable inspectable, string completedInspectionMessage)
+    private void ShowCompletedInspectionText(Inspectable inspectable, string completedInspectionMessage)
     {
         _completedInspectionText.SetText(completedInspectionMessage);
         _completedInspectionText.enabled= true;
         float messageTime = completedInspectionMessage.Length / 5f;
-        messageTime= Mathf.Clamp(messageTime, 3f, 15f);
+        messageTime= Mathf.Clamp(messageTime, 3f, 10f);
         StartCoroutine(FadecompletedText(messageTime));
     }
 
