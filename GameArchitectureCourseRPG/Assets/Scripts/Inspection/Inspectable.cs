@@ -7,8 +7,9 @@ using UnityEngine.Events;
 public class Inspectable : MonoBehaviour
 {
     [SerializeField] float _timeToInspect = 3f;
+    [SerializeField, TextArea] string _completedInspectionText;
     [SerializeField] UnityEvent OnInspectionCompleted;
-    [SerializeField] string _completedInspectionText;
+    [SerializeField] bool _requireMinigame;
 
     static HashSet<Inspectable> _inspectablesInRange = new HashSet<Inspectable>();
     
@@ -68,7 +69,10 @@ public class Inspectable : MonoBehaviour
         _data.TimeInspected += Time.deltaTime;
         if(WasFullyInspected)
         {
-            CompleteInspection();
+            if (_requireMinigame)
+                MinigameManager.Instance.StartMinigame(CompleteInspection);
+            else
+                CompleteInspection();
         }
     }
 
