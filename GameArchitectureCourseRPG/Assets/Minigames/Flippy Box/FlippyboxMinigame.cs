@@ -13,6 +13,11 @@ public class FlippyboxMinigame : MonoBehaviour
     public void StartMinigame(Action<MinigameResult> completeInspection)
     {
         _completeInspection = completeInspection;
+       
+        foreach (var restartable in GetComponentsInChildren<IRestart>())
+        {
+            restartable.Restart();
+        }
         gameObject.SetActive(true);
     }
 
