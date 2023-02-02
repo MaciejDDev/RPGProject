@@ -14,13 +14,6 @@ public class MinigameManager : MonoBehaviour
     {
         Instance= this;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Y))
@@ -31,7 +24,7 @@ public class MinigameManager : MonoBehaviour
     }
     public void StartMinigame(Action<MinigameResult> completeInspection)
     {
-        WinLoseMinigamePanel.Instance.StartMinigame(completeInspection);
+        FlippyboxMinigame.Instance.StartMinigame(completeInspection);
    
     }
 }
