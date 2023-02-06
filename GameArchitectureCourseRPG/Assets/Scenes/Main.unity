@@ -856,6 +856,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _requireMinigame: 1
+  _minigameSettings: {fileID: 11400000, guid: 9daa43ae4ff957747bc6ae9eb0d40bd8, type: 2}
 --- !u!65 &167234175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3253,7 +3254,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _requireMinigame: 0
+  _requireMinigame: 1
+  _minigameSettings: {fileID: 11400000, guid: 6721e5d8857c02f4db76564495a27082, type: 2}
 --- !u!65 &347922703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8113,7 +8115,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25840
+  m_Name: pb_Mesh25934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15599,6 +15601,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   _requireMinigame: 0
+  _minigameSettings: {fileID: 0}
 --- !u!43 &902987354
 Mesh:
   m_ObjectHideFlags: 0
@@ -18934,7 +18937,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25812
+  m_Name: pb_Mesh25920
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19601,6 +19604,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _requireMinigame: 0
+  _minigameSettings: {fileID: 0}
 --- !u!65 &1071138344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21599,6 +21603,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _requireMinigame: 0
+  _minigameSettings: {fileID: 0}
 --- !u!1 &1227518811
 GameObject:
   m_ObjectHideFlags: 0
@@ -21665,6 +21670,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _requireMinigame: 0
+  _minigameSettings: {fileID: 0}
 --- !u!65 &1227518814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22829,6 +22835,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _requireMinigame: 0
+  _minigameSettings: {fileID: 0}
 --- !u!1 &1252642044
 GameObject:
   m_ObjectHideFlags: 0
@@ -23340,28 +23347,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1274197718 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4966188489366306527, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
-  m_PrefabInstance: {fileID: 1394206500}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1274197719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4675120956751378564, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
   m_PrefabInstance: {fileID: 1394206500}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1274197720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274197718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab59a0f3aae1d44c90c11a51590ab32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1279607416
 Mesh:
   m_ObjectHideFlags: 0
@@ -23956,14 +23946,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1264137002}
     m_Modifications:
-    - target: {fileID: 1214851952, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
-      propertyPath: _growTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1214851952, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
-      propertyPath: _jumpVelocity.x
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4675120956751378564, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -28172,6 +28154,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   _requireMinigame: 0
+  _minigameSettings: {fileID: 0}
 --- !u!65 &1744675826
 BoxCollider:
   m_ObjectHideFlags: 0

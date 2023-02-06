@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FlippyBoxMovingBlock : MonoBehaviour, IRestart
 {
-    [SerializeField] float _moveSpeed = 4f;
     
     Rigidbody2D _rigidbody;
     Vector3 _startingPosition;
+    float MoveSpeed => FlippyboxMinigame.Instance.CurrentSettings.MovingBlockSpeed;
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class FlippyBoxMovingBlock : MonoBehaviour, IRestart
 
     void FixedUpdate()
     {
-        Vector2 movement = Vector2.left * _moveSpeed * Time.deltaTime;
+        Vector2 movement = Vector2.left * MoveSpeed * Time.deltaTime;
         _rigidbody.position += movement;
         if(transform.localPosition.x < -15f)
         {

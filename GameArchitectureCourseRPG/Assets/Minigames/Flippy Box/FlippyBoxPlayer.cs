@@ -6,8 +6,8 @@ using UnityEngine;
 public class FlippyBoxPlayer : MonoBehaviour, IRestart
 {
 
-    [SerializeField] Vector2 _jumpVelocity = Vector2.up;
-    [SerializeField] float _growTime = 10f;
+    [SerializeField] Vector2 _jumpVelocity => FlippyboxMinigame.Instance.CurrentSettings.JumpVelocity;
+    [SerializeField] float _growTime => FlippyboxMinigame.Instance.CurrentSettings.GrowTime;
    [SerializeField] float _spinSpeed = 50f;
 
     Rigidbody2D _rigidbody;
@@ -38,5 +38,6 @@ public class FlippyBoxPlayer : MonoBehaviour, IRestart
         transform.rotation = _startingRotation;
         _elapsed = 0f;
         transform.localScale = Vector3.one;
+        GetComponent<SpriteRenderer>().color = FlippyboxMinigame.Instance.CurrentSettings.PlayerColor;
     }
 }
