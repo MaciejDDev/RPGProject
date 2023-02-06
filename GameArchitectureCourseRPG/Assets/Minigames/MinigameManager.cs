@@ -22,14 +22,13 @@ public class MinigameManager : MonoBehaviour
             _completeInspection= null;
         }
     }
-    public void StartMinigame(FlippyBoxMinigameSettings settings, Action<MinigameResult> completeInspection)
+    public void StartMinigame(MinigameSettings settings, Action<MinigameResult> completeInspection)
     {
-        FlippyboxMinigame.Instance.StartMinigame(settings, completeInspection);
-   
+        if (settings is FlippyBoxMinigameSettings flippyBoxMinigameSettings)    
+            FlippyboxMinigame.Instance.StartMinigame(flippyBoxMinigameSettings, completeInspection);
+        else if (settings is WinLoseMinigameSettings winLoseMinigameSettings)
+            WinLoseMinigamePanel.Instance.StartMinigame(completeInspection);
     }
 
-    internal void StartMinigame(object minigameSettings, Action<MinigameResult> handleMinigameCompleted)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

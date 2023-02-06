@@ -10,7 +10,7 @@ public class Inspectable : MonoBehaviour
     [SerializeField, TextArea] string _completedInspectionText;
     [SerializeField] UnityEvent OnInspectionCompleted;
     [SerializeField] bool _requireMinigame;
-    [SerializeField] FlippyBoxMinigameSettings _minigameSettings;
+    [SerializeField] MinigameSettings _minigameSettings;
 
     static HashSet<Inspectable> _inspectablesInRange = new HashSet<Inspectable>();
     
