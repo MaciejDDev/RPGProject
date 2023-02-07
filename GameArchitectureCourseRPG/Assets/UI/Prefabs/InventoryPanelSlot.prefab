@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4377229075803002950}
   - component: {fileID: 4377229075803002951}
   - component: {fileID: 2429263606724957735}
+  - component: {fileID: 3266203088632853094}
   m_Layer: 5
   m_Name: InventoryPanelSlot
   m_TagString: Untagged
@@ -91,6 +92,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemIcon: {fileID: 3840337302905980092}
+  _outline: {fileID: 3266203088632853094}
+--- !u!114 &3266203088632853094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4377229075803002949}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7618547111144880572
 GameObject:
   m_ObjectHideFlags: 0
