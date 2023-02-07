@@ -4,18 +4,26 @@ using UnityEngine;
 [Serializable]
 public class ItemSlot
 {
-    public Item _item;
     SlotData _slotData;
 
-    public bool IsEmpty => _item == null;
+    public Item Item;
+    public event Action Changed;
+    public bool IsEmpty => Item == null;
+
 
     public void SetItem(Item item)
     {
-        _item = item;
+        var previousItem = Item;
+        Item = item;
         _slotData.ItemName = item?.name ?? string.Empty;
+        if(previousItem != Item)
+        {
+            Changed?.Invoke();
+        }
+
     }
 
-    internal void Bind(SlotData slotData)
+    public void Bind(SlotData slotData)
     {
         _slotData = slotData;
         var item = Resources.Load<Item>(path: "Items/" + _slotData.ItemName);
