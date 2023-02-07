@@ -12,9 +12,11 @@ public class FlagManager : MonoBehaviour
     public static FlagManager Instance { get; private set; }
     void Awake() => Instance = this;
     void Start() => _flagsByName = _allFlags.ToDictionary(k => k.name, v => v);
-    void OnValidate() => _allFlags = Extensions.GetAllInstances<GameFlag>();
 
-    
+#if UNITY_EDITOR
+    void OnValidate() => _allFlags = Extensions.GetAllInstances<GameFlag>();
+#endif
+
 
     public void Set(string flagName, string value)
     {
