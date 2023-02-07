@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 [Serializable]
 public class ItemSlot
@@ -17,6 +18,8 @@ public class ItemSlot
     internal void Bind(SlotData slotData)
     {
         _slotData = slotData;
+        var item = Resources.Load<Item>(path: "Items/" + _slotData.ItemName);
+        SetItem(item);
         //SetItem();
     }
 }
