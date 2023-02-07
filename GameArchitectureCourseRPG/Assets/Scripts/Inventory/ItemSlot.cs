@@ -30,6 +30,13 @@ public class ItemSlot
         SetItem(item);
         //SetItem();
     }
+
+    public void Swap(ItemSlot slotToSwapWith)
+    {
+        var itemInOtherSlot = slotToSwapWith.Item;
+        slotToSwapWith.SetItem(Item);
+        SetItem(itemInOtherSlot);
+    }
 }
 
 [Serializable]
