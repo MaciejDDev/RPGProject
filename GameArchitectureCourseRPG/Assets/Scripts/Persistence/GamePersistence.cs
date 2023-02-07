@@ -6,10 +6,10 @@ public class GamePersistence : MonoBehaviour
     public GameData _gameData;
    
     
-    void Start() => LoadGameFlags();
-    void OnDisable() => SaveGameFlags();
+    void Start() => LoadGame();
+    void OnDisable() => SaveGame();
 
-    void SaveGameFlags()
+    void SaveGame()
     {
         Debug.Log("Saving Game DATA");
         var json = JsonUtility.ToJson(_gameData);
@@ -18,14 +18,15 @@ public class GamePersistence : MonoBehaviour
         Debug.Log("Saving Game DATA Completed");
     }
 
-    void LoadGameFlags()
+    void LoadGame()
     {
         var json = PlayerPrefs.GetString("GameData");
         _gameData = JsonUtility.FromJson<GameData>(json); //new GameData();
         if(_gameData ==null)
             _gameData = new GameData();
 
-        FlagManager.Instance.Bind(_gameData._gameFlagDatas);
+        FlagManager.Instance.Bind(_gameData.GameFlagDatas);
         InspectionManager.Bind(_gameData.InspectableDatas);
+        Inventory.Instance.Bind(_gameData.SlotDatas);
     }
 }
