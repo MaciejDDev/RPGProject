@@ -8,8 +8,11 @@ public class Inventory : MonoBehaviour
 {
 
     const int GENERAL_SIZE = 9;
+    const int CRAFTING_SIZE = 9;
+    
     public ItemSlot[] GeneralSlots = new ItemSlot[GENERAL_SIZE];
-
+    public ItemSlot[] CraftingSlots = new ItemSlot[CRAFTING_SIZE];
+    
     [SerializeField] Item _debugItem;
 
     public static Inventory Instance { get; private set; }
@@ -20,6 +23,10 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < GENERAL_SIZE; i++)
         {
             GeneralSlots[i] = new ItemSlot();
+        }
+        for (int i = 0; i < CRAFTING_SIZE; i++)
+        {
+            CraftingSlots[i] = new ItemSlot();
         }
     }
     public void AddItem(Item item)
@@ -50,6 +57,18 @@ public class Inventory : MonoBehaviour
             if (slotData == null)
             {
                 slotData = new SlotData() { SlotName = "General" + i };
+                slotDatas.Add(slotData);
+            }
+
+            slot.Bind(slotData);
+        }
+        for (int i = 0; i < CraftingSlots.Length; i++)
+        {
+            var slot = CraftingSlots[i];
+            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == "Crafting" + i);
+            if (slotData == null)
+            {
+                slotData = new SlotData() { SlotName = "Crafting" + i };
                 slotDatas.Add(slotData);
             }
 
