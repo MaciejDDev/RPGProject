@@ -3,7 +3,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryPanelSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class InventoryPanelSlot : MonoBehaviour, 
+    IPointerEnterHandler, 
+    IPointerExitHandler, 
+    IBeginDragHandler, 
+    IEndDragHandler, 
+    IDragHandler,
+    IPointerClickHandler
 {
     static InventoryPanelSlot Focused;
     
@@ -73,5 +79,10 @@ public class InventoryPanelSlot : MonoBehaviour, IPointerEnterHandler, IPointerE
             _itemIcon.sprite = null;
             _itemIcon.enabled = false;
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        ItemTooltipPanel.Instance.ShowItem(_itemSlot.Item);
     }
 }

@@ -8,4 +8,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public Sprite Icon;
+
+    [Multiline(lines:3)]
+    public string Description;
 }
