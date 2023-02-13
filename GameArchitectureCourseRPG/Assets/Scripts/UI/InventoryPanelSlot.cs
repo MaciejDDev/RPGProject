@@ -58,6 +58,9 @@ public class InventoryPanelSlot : MonoBehaviour,
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if(Focused == null && Input.GetKey(KeyCode.LeftControl))
+            _itemSlot.RemoveItem();
+
         if (!_itemSlot.IsEmpty && Focused != null)
             _itemSlot.Swap(Focused._itemSlot);
 
