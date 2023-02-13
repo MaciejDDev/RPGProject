@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GreenToBlueButton
   m_EditorClassIdentifier: 
   Ingredients:
-  - {fileID: 11400000, guid: 9e2b89173b003454faeb5c3759391709, type: 2}
-  Rewards:
   - {fileID: 11400000, guid: 1a140ce064ab4e24498bf00a93a97e8c, type: 2}
+  Rewards:
+  - {fileID: 11400000, guid: 7710ac54465c4cf45a6ee1535afbb302, type: 2}

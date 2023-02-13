@@ -37,6 +37,11 @@ public class ItemSlot
         slotToSwapWith.SetItem(Item);
         SetItem(itemInOtherSlot);
     }
+
+    public void RemoveItem()
+    {
+        SetItem(null);
+    }
 }
 
 [Serializable]

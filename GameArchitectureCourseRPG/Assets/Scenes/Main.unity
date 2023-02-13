@@ -23894,6 +23894,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recipes:
   - {fileID: 11400000, guid: e61b0f0dc32b17846ba0e59adade2aca, type: 2}
+  - {fileID: 11400000, guid: 3428b65ce7c520243bfbe4a3f729a12e, type: 2}
+  - {fileID: 11400000, guid: e319137ca5fc8544288f46b63b1b36fd, type: 2}
 --- !u!4 &1315735350
 Transform:
   m_ObjectHideFlags: 0
@@ -24387,6 +24389,10 @@ PrefabInstance:
     - target: {fileID: 4966188489366306527, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
       propertyPath: m_Name
       value: '[MINIGAME] Flippy Box'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966188489366306527, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb3c19b75fc4ef4aa651dd758d13404, type: 3}
