@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
     public List<ItemSlot> OverflowSlots= new List<ItemSlot>();
     
     [SerializeField] Item _debugItem;
+    List<SlotData> _slotDatas;
 
     public static Inventory Instance { get; private set; }
     public ItemSlot TopOverflowSlot => OverflowSlots?.FirstOrDefault();
@@ -32,28 +33,50 @@ public class Inventory : MonoBehaviour
             CraftingSlots[i] = new ItemSlot();
         }
     }
+
+    bool AddItemToSlots(Item item, IEnumerable<ItemSlot> slots)
+    {
+        var slot = slots.FirstOrDefault(t => t.IsEmpty);
+        if(slot != null)
+        {
+            slot.SetItem(item);
+            return true;
+        }
+        return false;
+    }
+
     public void AddItem(Item item, InventoryType preferredInventoryType = InventoryType.General)
     {
         var preferredSlots = preferredInventoryType == InventoryType.General ? GeneralSlots : CraftingSlots;
         var backupSlots = preferredInventoryType == InventoryType.General ? CraftingSlots : GeneralSlots;
-        
-        
-        var firstAvailableSlot = preferredSlots.FirstOrDefault(t => t.IsEmpty);
+
+
+        if (AddItemToSlots(item, preferredSlots))
+            return;
+        if (AddItemToSlots(item, backupSlots))
+            return;
+        if (AddItemToSlots(item, OverflowSlots))
+            CreateOverFlowSlot();
+        else
+            Debug.LogError($"Unable to add item {item.name} to any slot because inventory is all full and overflow is not working");
+        /*var firstAvailableSlot = preferredSlots.FirstOrDefault(t => t.IsEmpty);
         if (firstAvailableSlot == null)
         {
             firstAvailableSlot = backupSlots.FirstOrDefault(t => t.IsEmpty);
         }
         if (firstAvailableSlot == null)
         {
-            firstAvailableSlot = TopOverflowSlot;
+            firstAvailableSlot = OverflowSlots.Last();
+            CreateOverFlowSlot();
+            
         }
         if (firstAvailableSlot != null)
         {
             firstAvailableSlot.SetItem(item);
         }
-        
-
+         */
     }
+
     [ContextMenu(nameof(AddDebugItem))]
     void AddDebugItem() => AddItem(_debugItem);
 
@@ -70,11 +93,9 @@ public class Inventory : MonoBehaviour
 
     public void Bind(List<SlotData> slotDatas)
     {
-        var overflowSlot = new ItemSlot();
-        var overflowSlotData = new SlotData() { SlotName = "Overflow" + OverflowSlots.Count };
-        slotDatas.Add(overflowSlotData);
-        overflowSlot.Bind(overflowSlotData);
-        OverflowSlots.Add(overflowSlot);
+        _slotDatas = slotDatas;
+        CreateOverFlowSlot();
+
         for (int i = 0; i < GeneralSlots.Length; i++)
         {
             var slot = GeneralSlots[i];
@@ -100,6 +121,16 @@ public class Inventory : MonoBehaviour
             slot.Bind(slotData);
         }
 
+    }
+
+    private void CreateOverFlowSlot()
+    {
+        
+        var overflowSlot = new ItemSlot();
+        var overflowSlotData = new SlotData() { SlotName = "Overflow" + OverflowSlots.Count };
+        _slotDatas.Add(overflowSlotData);
+        overflowSlot.Bind(overflowSlotData);
+        OverflowSlots.Add(overflowSlot);
     }
 
     public void ClearCraftingSlots()
