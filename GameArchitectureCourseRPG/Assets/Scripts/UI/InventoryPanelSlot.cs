@@ -58,11 +58,11 @@ public class InventoryPanelSlot : MonoBehaviour,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(Focused == null && Input.GetKey(KeyCode.LeftControl))
-            _itemSlot.RemoveItem();
+        if (Focused == null && Input.GetKey(KeyCode.LeftControl))
+            Inventory.Instance.RemoveItemFromSlot(_itemSlot);
 
         if (!_itemSlot.IsEmpty && Focused != null)
-            _itemSlot.Swap(Focused._itemSlot);
+            Inventory.Instance.Swap( _itemSlot, Focused._itemSlot);
 
         _itemIcon.color = Color.white;
         _draggedItemIcon.sprite = null;
