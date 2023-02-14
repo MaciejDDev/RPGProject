@@ -13,10 +13,12 @@ public class Inventory : MonoBehaviour
     
     public ItemSlot[] GeneralSlots = new ItemSlot[GENERAL_SIZE];
     public ItemSlot[] CraftingSlots = new ItemSlot[CRAFTING_SIZE];
+    public List<ItemSlot> OverflowSlots= new List<ItemSlot>();
     
     [SerializeField] Item _debugItem;
 
     public static Inventory Instance { get; private set; }
+    public ItemSlot TopOverflowSlot => OverflowSlots?.FirstOrDefault();
 
     private void Awake()
     {
@@ -33,16 +35,24 @@ public class Inventory : MonoBehaviour
     public void AddItem(Item item, InventoryType preferredInventoryType = InventoryType.General)
     {
         var preferredSlots = preferredInventoryType == InventoryType.General ? GeneralSlots : CraftingSlots;
-        var BackupSlots = preferredInventoryType == InventoryType.General ? CraftingSlots : GeneralSlots;
+        var backupSlots = preferredInventoryType == InventoryType.General ? CraftingSlots : GeneralSlots;
         
         
         var firstAvailableSlot = preferredSlots.FirstOrDefault(t => t.IsEmpty);
         if (firstAvailableSlot == null)
         {
-            firstAvailableSlot = BackupSlots.FirstOrDefault(t => t.IsEmpty);
+            firstAvailableSlot = backupSlots.FirstOrDefault(t => t.IsEmpty);
+        }
+        if (firstAvailableSlot == null)
+        {
+            firstAvailableSlot = TopOverflowSlot;
         }
         if (firstAvailableSlot != null)
+        {
             firstAvailableSlot.SetItem(item);
+        }
+        
+
     }
     [ContextMenu(nameof(AddDebugItem))]
     void AddDebugItem() => AddItem(_debugItem);
@@ -60,6 +70,11 @@ public class Inventory : MonoBehaviour
 
     public void Bind(List<SlotData> slotDatas)
     {
+        var overflowSlot = new ItemSlot();
+        var overflowSlotData = new SlotData() { SlotName = "Overflow" + OverflowSlots.Count };
+        slotDatas.Add(overflowSlotData);
+        overflowSlot.Bind(overflowSlotData);
+        OverflowSlots.Add(overflowSlot);
         for (int i = 0; i < GeneralSlots.Length; i++)
         {
             var slot = GeneralSlots[i];
