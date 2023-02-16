@@ -8,4 +8,5 @@ public class Recipe : ScriptableObject
 {
     public List<Item> Ingredients;
     public List<Item> Rewards;
+    public List<Item> FallbackRewards;
 }
