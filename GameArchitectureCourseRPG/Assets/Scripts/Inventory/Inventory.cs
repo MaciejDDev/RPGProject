@@ -36,6 +36,13 @@ public class Inventory : MonoBehaviour
 
     bool AddItemToSlots(Item item, IEnumerable<ItemSlot> slots)
     {
+        var stackableSlot = slots.FirstOrDefault(t => t.Item == item && t.HasStackSpaceAvailable);
+        if (stackableSlot != null)
+        {
+            stackableSlot.ModifyStack(1);
+            return true;
+        }
+
         var slot = slots.FirstOrDefault(t => t.IsEmpty);
         if(slot != null)
         {
