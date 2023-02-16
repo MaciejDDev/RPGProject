@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -19,13 +20,13 @@ public class InventoryPanelSlot : MonoBehaviour,
     [SerializeField] Image _itemIcon;
     [SerializeField] Outline _outline;
     [SerializeField] Color _draggingColor = Color.gray;
-
+    [SerializeField] TMP_Text _stackCountText;
 
     public void Bind(ItemSlot itemSlot)
     {
         _itemSlot = itemSlot;
-        _itemSlot.Changed += UpdateIcon;
-        UpdateIcon();
+        _itemSlot.Changed += UpdateIconAndStackSize;
+        UpdateIconAndStackSize();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -70,15 +71,18 @@ public class InventoryPanelSlot : MonoBehaviour,
 
     }
 
-    private void UpdateIcon()
+    void UpdateIconAndStackSize()
     {
         if (_itemSlot.Item != null)
         {
             _itemIcon.sprite = _itemSlot.Item.Icon;
             _itemIcon.enabled = true;
+            _stackCountText.SetText(_itemSlot.StackCount.ToString());
+            _stackCountText.enabled = _itemSlot.Item.MaxStackSize > 1;
         }
         else
         {
+            _stackCountText.enabled = false;
             _itemIcon.sprite = null;
             _itemIcon.enabled = false;
         }

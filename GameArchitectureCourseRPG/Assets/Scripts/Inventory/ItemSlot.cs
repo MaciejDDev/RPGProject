@@ -4,13 +4,15 @@ using UnityEngine;
 [Serializable]
 public class ItemSlot
 {
-    public SlotData _slotData;
+    SlotData _slotData;
 
     public Item Item;
     public event Action Changed;
     public bool IsEmpty => Item == null;
 
     public bool HasStackSpaceAvailable => _slotData.StackCount < Item.MaxStackSize;
+
+    public int StackCount => _slotData.StackCount;
 
     public void SetItem(Item item)
     {
@@ -29,7 +31,11 @@ public class ItemSlot
     {
         _slotData = slotData;
         var item = Resources.Load<Item>(path: "Items/" + _slotData.ItemName);
-        SetItem(item);
+
+        Item = item;
+        Changed?.Invoke();
+
+        //SetItem(item);
         //SetItem();
     }
 

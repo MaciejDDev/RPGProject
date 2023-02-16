@@ -8220,6 +8220,7 @@ MonoBehaviour:
   - Item: {fileID: 0}
   - Item: {fileID: 0}
   - Item: {fileID: 0}
+  OverflowSlots: []
   _debugItem: {fileID: 11400000, guid: 7710ac54465c4cf45a6ee1535afbb302, type: 2}
 --- !u!4 &560338154
 Transform:

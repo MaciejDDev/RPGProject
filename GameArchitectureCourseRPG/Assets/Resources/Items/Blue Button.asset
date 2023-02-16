@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Blue Button
   m_EditorClassIdentifier: 
   Icon: {fileID: 759407940, guid: 7a1f7019d0188ea4fb4b276d4274eed4, type: 3}
+  Description: 
+  MaxStackSize: 5
