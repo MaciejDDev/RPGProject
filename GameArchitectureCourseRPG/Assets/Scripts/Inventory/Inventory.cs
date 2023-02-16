@@ -102,7 +102,11 @@ public class Inventory : MonoBehaviour
     {
         _slotDatas = slotDatas;
         CreateOverFlowSlot();
-
+        TopOverflowSlot.Changed += () =>
+        {
+            if (TopOverflowSlot.IsEmpty && OverflowSlots.Any(t => !t.IsEmpty))
+                MoveOverflowItemsUp();
+        };
         for (int i = 0; i < GeneralSlots.Length; i++)
         {
             var slot = GeneralSlots[i];
@@ -147,15 +151,6 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void RemoveItemFromSlot(ItemSlot itemSlot)
-    {
-        itemSlot.RemoveItem();
-        if (itemSlot == TopOverflowSlot )
-        {
-            MoveOverflowItemsUp();
-        }
-    }
-
     void MoveOverflowItemsUp()
     {
         for (int i = 0; i < OverflowSlots.Count - 1; i++)
@@ -170,8 +165,6 @@ public class Inventory : MonoBehaviour
     {
         if (targetSlot == TopOverflowSlot)
             Debug.LogError("You can't drag items onto the overflow inventory");
-        else if (sourceSlot == TopOverflowSlot)
-            MoveItemFromOverflowSlot(targetSlot);
         else if (targetSlot != null && 
                  targetSlot.IsEmpty && 
                  Input.GetKey(KeyCode.LeftShift) && 
@@ -196,11 +189,6 @@ public class Inventory : MonoBehaviour
             sourceSlot.Swap(targetSlot);
     }
 
-    void MoveItemFromOverflowSlot(ItemSlot targetSlot)
-    {
-        targetSlot.SetItem(TopOverflowSlot.Item);
-        MoveOverflowItemsUp();
-    }
 }
 
 public enum InventoryType
