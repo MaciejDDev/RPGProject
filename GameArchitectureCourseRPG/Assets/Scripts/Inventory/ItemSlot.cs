@@ -14,6 +14,8 @@ public class ItemSlot
 
     public int StackCount => _slotData.StackCount;
 
+    public int AvailableStackSpace => this.Item != null ? Item.MaxStackSize - _slotData.StackCount : 0;
+
     public void SetItem(Item item, int stackCount = 1)
     {
         var previousItem = Item;
@@ -54,7 +56,10 @@ public class ItemSlot
     public void ModifyStack(int amount)
     {
         _slotData.StackCount += amount;
-        Changed?.Invoke();
+        if (_slotData.StackCount <= 0)
+            SetItem(null);
+        else
+            Changed?.Invoke();
     }
 }
 

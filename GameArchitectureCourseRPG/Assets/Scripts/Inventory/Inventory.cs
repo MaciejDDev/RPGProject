@@ -172,6 +172,26 @@ public class Inventory : MonoBehaviour
             Debug.LogError("You can't drag items onto the overflow inventory");
         else if (sourceSlot == TopOverflowSlot)
             MoveItemFromOverflowSlot(targetSlot);
+        else if (targetSlot != null && 
+                 targetSlot.IsEmpty && 
+                 Input.GetKey(KeyCode.LeftShift) && 
+                 sourceSlot.StackCount > 1)
+        {
+            targetSlot.SetItem(sourceSlot.Item);
+            sourceSlot.ModifyStack(-1);
+        }
+        else if (targetSlot != null &&
+                 targetSlot.Item == sourceSlot.Item &&
+                 targetSlot.HasStackSpaceAvailable)
+        {
+            int numberToMove = Mathf.Min(targetSlot.AvailableStackSpace, sourceSlot.StackCount);
+            
+            if (Input.GetKey(KeyCode.LeftShift) && numberToMove > 1)
+                numberToMove = 1;
+            
+            targetSlot.ModifyStack(numberToMove);
+            sourceSlot.ModifyStack(-numberToMove);
+        }
         else
             sourceSlot.Swap(targetSlot);
     }
