@@ -63,7 +63,10 @@ public class Inventory : MonoBehaviour
         if (AddItemToSlots(item, backupSlots))
             return;
         if (AddItemToSlots(item, OverflowSlots))
-            CreateOverFlowSlot();
+        {
+            if(OverflowSlots.Any(t => t.IsEmpty) == false)
+                CreateOverFlowSlot();
+        }
         else
             Debug.LogError($"Unable to add item {item.name} to any slot because inventory is all full and overflow is not working");
         /*var firstAvailableSlot = preferredSlots.FirstOrDefault(t => t.IsEmpty);
@@ -101,37 +104,44 @@ public class Inventory : MonoBehaviour
     public void Bind(List<SlotData> slotDatas)
     {
         _slotDatas = slotDatas;
+        BindToSlots(_slotDatas, GeneralSlots, "General");
+        BindToSlots(_slotDatas, CraftingSlots, "Crafting");
+
+        var overflowSlotDatas = slotDatas.Where(t => t.SlotName.StartsWith("Overflow") &&
+                                String.IsNullOrEmpty(t.ItemName) == false).ToList();
+
+        foreach (var overflowSlotData in overflowSlotDatas)
+        {
+            var itemSlot = new ItemSlot();
+            itemSlot.Bind(overflowSlotData);
+            OverflowSlots.Add(itemSlot);
+        }
+
+
         CreateOverFlowSlot();
         TopOverflowSlot.Changed += () =>
         {
             if (TopOverflowSlot.IsEmpty && OverflowSlots.Any(t => !t.IsEmpty))
                 MoveOverflowItemsUp();
         };
-        for (int i = 0; i < GeneralSlots.Length; i++)
+        
+
+    }
+
+    static void BindToSlots( List<SlotData> slotDatas, ItemSlot[] slots,string  slotName)
+    {
+        for (int i = 0; i < slots.Length; i++)
         {
-            var slot = GeneralSlots[i];
-            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == "General" + i);
+            var slot = slots[i];
+            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == slotName + i);
             if (slotData == null)
             {
-                slotData = new SlotData() { SlotName = "General" + i };
+                slotData = new SlotData() { SlotName = slotName + i };
                 slotDatas.Add(slotData);
             }
 
             slot.Bind(slotData);
         }
-        for (int i = 0; i < CraftingSlots.Length; i++)
-        {
-            var slot = CraftingSlots[i];
-            var slotData = slotDatas.FirstOrDefault(t => t.SlotName == "Crafting" + i);
-            if (slotData == null)
-            {
-                slotData = new SlotData() { SlotName = "Crafting" + i };
-                slotDatas.Add(slotData);
-            }
-
-            slot.Bind(slotData);
-        }
-
     }
 
     private void CreateOverFlowSlot()
