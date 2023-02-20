@@ -40,14 +40,24 @@ public class PlacementManager : MonoBehaviour
         if (_placeable == null)
             return;
 
+        var rotation = -Input.mouseScrollDelta.y * Time.deltaTime * _rotateSpeed;
+        _placeable.transform.Rotate(0f, rotation, 0f);
+        
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out var hitInfo, float.MaxValue, _layerMask, QueryTriggerInteraction.Ignore ) )
         {
             _placeable.transform.position = hitInfo.point;
+            if (Input.GetMouseButtonDown(0))
+                FinishPlacement();
         }
 
-        var rotation = -Input.mouseScrollDelta.y * Time.deltaTime * _rotateSpeed;
-        _placeable.transform.Rotate(0f, rotation, 0f);
         
+    }
+
+    void FinishPlacement()
+    {
+        _placeable = null;
+        _itemSlot.RemoveItem();
+        _itemSlot = null;
     }
 }
