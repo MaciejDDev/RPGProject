@@ -21993,6 +21993,7 @@ MonoBehaviour:
     GameFlagDatas: []
     InspectableDatas: []
     SlotDatas: []
+    PlaceableDatas: []
 --- !u!4 &1358466459
 Transform:
   m_ObjectHideFlags: 0
@@ -25859,6 +25860,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _rotateSpeed: 500
+  _allPlaceables:
+  - {fileID: 108616122495187552, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
   _itemSlot:
     Item: {fileID: 0}
 --- !u!4 &1693525866

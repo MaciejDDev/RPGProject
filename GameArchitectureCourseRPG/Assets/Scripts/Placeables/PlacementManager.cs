@@ -1,14 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlacementManager : MonoBehaviour
 {
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _rotateSpeed = 500f;
+    [SerializeField] List<GameObject> _allPlaceables;
    
     GameObject _placeable;
+    List<PlaceableData> _placeableDatas;
     
     public ItemSlot _itemSlot;
 
@@ -56,8 +59,30 @@ public class PlacementManager : MonoBehaviour
 
     void FinishPlacement()
     {
+        _placeableDatas.Add(new PlaceableData()
+        {
+            PlaceablePrefab = _itemSlot.Item.PlaceablePrefab.name,
+            Position = _placeable.transform.position,
+            Rotation = _placeable.transform.rotation
+
+        });
+
         _placeable = null;
         _itemSlot.RemoveItem();
         _itemSlot = null;
+    }
+
+    public void Bind(List<PlaceableData> placeableDatas)
+    {
+        _placeableDatas = placeableDatas;
+
+        foreach (var placeableData in _placeableDatas)
+        {
+            var prefab = _allPlaceables.FirstOrDefault(t => t.name == placeableData.PlaceablePrefab);
+            if (prefab != null)
+                Instantiate(prefab, placeableData.Position, placeableData.Rotation);
+            else
+                Debug.LogError($"Unable respawn placeable Item {placeableData.PlaceablePrefab} because prefab was not found");
+        }
     }
 }
