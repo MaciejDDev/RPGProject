@@ -25858,6 +25858,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _rotateSpeed: 500
   _itemSlot:
     Item: {fileID: 0}
 --- !u!4 &1693525866

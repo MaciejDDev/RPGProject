@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlacementManager : MonoBehaviour
 {
     [SerializeField] LayerMask _layerMask;
+    [SerializeField] float _rotateSpeed = 500f;
    
     GameObject _placeable;
     
@@ -45,6 +46,8 @@ public class PlacementManager : MonoBehaviour
             _placeable.transform.position = hitInfo.point;
         }
 
+        var rotation = -Input.mouseScrollDelta.y * Time.deltaTime * _rotateSpeed;
+        _placeable.transform.Rotate(0f, rotation, 0f);
         
     }
 }
