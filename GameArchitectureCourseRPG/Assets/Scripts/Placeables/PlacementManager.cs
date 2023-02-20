@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlacementManager : MonoBehaviour
 {
+    [SerializeField] LayerMask _layerMask;
    
+    GameObject _placeable;
     
     public ItemSlot _itemSlot;
 
-   
-    
     public static PlacementManager Instance { get; private set; }
 
     void Awake()
@@ -24,14 +24,27 @@ public class PlacementManager : MonoBehaviour
             Debug.LogError("Unable to place because of null item or placeable");
             return;
         }
+       
 
         _itemSlot = itemSlot;
         Debug.Log($"Started placing item {itemSlot.Item}");
 
-        var placeable = Instantiate(itemSlot.Item.PlaceablePrefab);
-        placeable.transform.SetParent(transform);
+        _placeable = Instantiate(itemSlot.Item.PlaceablePrefab);
+        _placeable.transform.SetParent(transform);
 
     }
 
+    void Update()
+    {
+        if (_placeable == null)
+            return;
 
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out var hitInfo, float.MaxValue, _layerMask, QueryTriggerInteraction.Ignore ) )
+        {
+            _placeable.transform.position = hitInfo.point;
+        }
+
+        
+    }
 }

@@ -25855,6 +25855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957df034511f04a4991ef6a1f066e5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   _itemSlot:
     Item: {fileID: 0}
 --- !u!4 &1693525866
@@ -30330,7 +30333,7 @@ GameObject:
   - component: {fileID: 2007189161}
   - component: {fileID: 2007189160}
   - component: {fileID: 2007189159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
