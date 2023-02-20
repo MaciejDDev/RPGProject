@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84d910855dab74488b2ec99c52c373d, type: 3}
   m_Name: DEfectControlPanel
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 9eae5e0ae55d18b48957a25f97db9774, type: 3}
+  Icon: {fileID: 21300000, guid: ce52acbca598e964989f36c121707fc3, type: 3}
   Description: 
   MaxStackSize: 0

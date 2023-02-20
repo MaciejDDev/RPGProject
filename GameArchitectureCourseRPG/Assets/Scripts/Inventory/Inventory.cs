@@ -104,11 +104,11 @@ public class Inventory : MonoBehaviour
     public void Bind(List<SlotData> slotDatas)
     {
         _slotDatas = slotDatas;
-        BindToSlots(_slotDatas, GeneralSlots, "General");
-        BindToSlots(_slotDatas, CraftingSlots, "Crafting");
+        BindToSlots(slotDatas, GeneralSlots, "General");
+        BindToSlots(slotDatas, CraftingSlots, "Crafting");
 
         var overflowSlotDatas = slotDatas.Where(t => t.SlotName.StartsWith("Overflow") &&
-                                String.IsNullOrEmpty(t.ItemName) == false).ToList();
+                                String.IsNullOrWhiteSpace(t.ItemName) == false).ToList();
 
         foreach (var overflowSlotData in overflowSlotDatas)
         {

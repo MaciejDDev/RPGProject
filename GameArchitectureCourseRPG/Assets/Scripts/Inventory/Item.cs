@@ -14,6 +14,9 @@ public class Item : ScriptableObject
 
     public int MaxStackSize;
 
+    public GameObject PlaceablePrefab;
+
+
     [ContextMenu("Add 1")]
     public void Add1() => Inventory.Instance.AddItem(this);
     [ContextMenu("Add 5")]
