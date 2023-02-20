@@ -14,6 +14,8 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
     [SerializeField] Button _placeButton;
 
     CanvasGroup _canvasGroup;
+    ItemSlot _itemSlot;
+
     public static ItemTooltipPanel Instance { get; private set; }
 
 
@@ -22,10 +24,19 @@ public class ItemTooltipPanel : MonoBehaviour, IPointerClickHandler
         Instance = this;
         _canvasGroup = GetComponent<CanvasGroup>();
         Toggle(false);
+        _placeButton.onClick.AddListener(TryPlace);
     }
 
-    public void ShowItem(Item item)
+    private void TryPlace()
     {
+        PlacementManager.Instance.BeginPlacement(_itemSlot);
+    }
+
+    public void ShowItem(ItemSlot itemSlot)
+    {
+        _itemSlot = itemSlot;
+
+        var item = itemSlot.Item;
         if(item == null)
         {
             Toggle(false);

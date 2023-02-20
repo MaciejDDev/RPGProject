@@ -92,6 +92,6 @@ public class InventoryPanelSlot : MonoBehaviour,
     {
         if (Input.GetKey(KeyCode.LeftShift) && _itemSlot.IsEmpty == false) 
            Inventory.Instance.AddItem(_itemSlot.Item); 
-        ItemTooltipPanel.Instance.ShowItem(_itemSlot.Item);
+        ItemTooltipPanel.Instance.ShowItem(_itemSlot);
     }
 }
