@@ -15,4 +15,4 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 9eae5e0ae55d18b48957a25f97db9774, type: 3}
   Description: 
   MaxStackSize: 0
-  PlaceablePrefab: {fileID: 108616122495187552, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
+  PlaceablePrefab: {fileID: -1028592057389298988, guid: 62592ef6f66639a43bf22980f2c31d5c, type: 3}

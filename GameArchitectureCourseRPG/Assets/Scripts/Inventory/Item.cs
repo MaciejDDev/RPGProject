@@ -14,7 +14,7 @@ public class Item : ScriptableObject
 
     public int MaxStackSize;
 
-    public GameObject PlaceablePrefab;
+    public Placeable PlaceablePrefab;
 
 
     [ContextMenu("Add 1")]

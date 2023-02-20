@@ -25861,7 +25861,7 @@ MonoBehaviour:
     m_Bits: 64
   _rotateSpeed: 500
   _allPlaceables:
-  - {fileID: 108616122495187552, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
+  - {fileID: -1028592057389298988, guid: 62592ef6f66639a43bf22980f2c31d5c, type: 3}
   _itemSlot:
     Item: {fileID: 0}
 --- !u!4 &1693525866
@@ -34920,7 +34920,7 @@ PrefabInstance:
       objectReference: {fileID: 139733619}
     - target: {fileID: 108616121980703042, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_VersionIndex
-      value: 552
+      value: 567
       objectReference: {fileID: 0}
     - target: {fileID: 108616121980703046, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_Mesh
@@ -34932,7 +34932,7 @@ PrefabInstance:
       objectReference: {fileID: 1032467939}
     - target: {fileID: 108616122056287496, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_VersionIndex
-      value: 1142
+      value: 1157
       objectReference: {fileID: 0}
     - target: {fileID: 108616122056287500, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_Mesh
@@ -35004,7 +35004,7 @@ PrefabInstance:
       objectReference: {fileID: 1279607416}
     - target: {fileID: 108616122495187567, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_VersionIndex
-      value: 3246
+      value: 3261
       objectReference: {fileID: 0}
     - target: {fileID: 108616122674214713, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_Mesh
@@ -35016,7 +35016,7 @@ PrefabInstance:
       objectReference: {fileID: 1549990052}
     - target: {fileID: 108616122674214714, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_VersionIndex
-      value: 549
+      value: 564
       objectReference: {fileID: 0}
     - target: {fileID: 108616122674214718, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_Mesh
@@ -35036,7 +35036,7 @@ PrefabInstance:
       objectReference: {fileID: 1568593186}
     - target: {fileID: 108616123186447135, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}
       propertyPath: m_VersionIndex
-      value: 555
+      value: 570
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b038d8ebad14ab64e836ee35f53a35f1, type: 3}

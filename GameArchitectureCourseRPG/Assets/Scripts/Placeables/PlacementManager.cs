@@ -8,9 +8,9 @@ public class PlacementManager : MonoBehaviour
 {
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _rotateSpeed = 500f;
-    [SerializeField] List<GameObject> _allPlaceables;
+    [SerializeField] List<Placeable> _allPlaceables;
    
-    GameObject _placeable;
+    Placeable _placeable;
     List<PlaceableData> _placeableDatas;
     
     public ItemSlot _itemSlot;
@@ -67,6 +67,8 @@ public class PlacementManager : MonoBehaviour
 
         });
 
+
+        _placeable.Place();
         _placeable = null;
         _itemSlot.RemoveItem();
         _itemSlot = null;
@@ -80,7 +82,11 @@ public class PlacementManager : MonoBehaviour
         {
             var prefab = _allPlaceables.FirstOrDefault(t => t.name == placeableData.PlaceablePrefab);
             if (prefab != null)
-                Instantiate(prefab, placeableData.Position, placeableData.Rotation);
+            {
+                var placeable = Instantiate(prefab, placeableData.Position, placeableData.Rotation);
+                if (placeable != null)
+                    placeable.Place();
+            }
             else
                 Debug.LogError($"Unable respawn placeable Item {placeableData.PlaceablePrefab} because prefab was not found");
         }
