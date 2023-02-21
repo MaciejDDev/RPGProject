@@ -814,7 +814,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 564
+  m_VersionIndex: 567
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1714,7 +1714,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 558
+  m_VersionIndex: 561
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2614,7 +2614,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 561
+  m_VersionIndex: 564
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3017,7 +3017,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1151
+  m_VersionIndex: 1154
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3914,7 +3914,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3255
+  m_VersionIndex: 3258
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4048,6 +4048,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _previewObject: {fileID: 939801359255652091}
   _placedObject: {fileID: 9021045883170437987}
+  _tintedRenderers:
+  - {fileID: 939801359255652086}
+  - {fileID: 939801358887016853}
+  - {fileID: 939801358000196515}
+  - {fileID: 939801358693969371}
+  - {fileID: 939801357756465030}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  _invalidColor: {r: 1, g: 0, b: 0, a: 0.39215687}
 --- !u!1001 &8984910671727231235
 PrefabInstance:
   m_ObjectHideFlags: 0

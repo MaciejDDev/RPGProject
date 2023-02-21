@@ -49,8 +49,8 @@ public class PlacementManager : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out var hitInfo, float.MaxValue, _layerMask, QueryTriggerInteraction.Ignore ) )
         {
-            _placeable.transform.position = hitInfo.point;
-            if (Input.GetMouseButtonDown(0))
+            _placeable.SetPosition(hitInfo.point);
+            if (Input.GetMouseButtonDown(0) && _placeable.IsPlacementValid)
                 FinishPlacement();
         }
 
