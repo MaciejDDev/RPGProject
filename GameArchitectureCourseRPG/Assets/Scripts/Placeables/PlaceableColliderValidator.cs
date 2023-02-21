@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class PlaceableColliderValidator : MonoBehaviour, IValidatePlacement
 {
     BoxCollider _collider;

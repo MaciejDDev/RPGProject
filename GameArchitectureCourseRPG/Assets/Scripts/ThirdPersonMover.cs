@@ -19,9 +19,14 @@ public class ThirdPersonMover : MonoBehaviour
     void Update() => _mouseMovement += Input.GetAxis("MouseX");
     void FixedUpdate() 
     {
-        if (ToggleablePanel.IsVisible == false)
-            transform.Rotate(0, _mouseMovement * Time.deltaTime * _turnSpeed, 0);
-        
+
+        if (ToggleablePanel.AnyVisible)
+        {
+            _animator.SetFloat("Vertical", 0f, 0.1f, Time.deltaTime);
+            _animator.SetFloat("Horizontal", 0f, 0.1f, Time.deltaTime);
+            return;
+        }
+        transform.Rotate(0, _mouseMovement * Time.deltaTime * _turnSpeed, 0);
         _mouseMovement = 0;
 
         float horizontal = Input.GetAxis("Horizontal");
@@ -33,11 +38,9 @@ public class ThirdPersonMover : MonoBehaviour
         var velocity = new Vector3(horizontal, 0, vertical);
         velocity *= _moveSpeed * Time.fixedDeltaTime;
         Vector3 offset = transform.rotation * velocity;
+     
         _rigidbody.MovePosition(transform.position + offset);
-        
         _animator.SetFloat("Vertical", vertical, 0.1f, Time.deltaTime);
         _animator.SetFloat("Horizontal", horizontal, 0.1f, Time.deltaTime);
-
-
     }
 }
