@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class InRangeOfPlayerValidator : MonoBehaviour
+public class InRangeOfPlayerValidator : MonoBehaviour, IValidatePlacement
 {
     [SerializeField] float _range = 10f;
 

@@ -10,9 +10,9 @@ public class Placeable : MonoBehaviour
     [SerializeField] List<Renderer> _tintedRenderers;
     [SerializeField] Color _defaultColor;
     [SerializeField] Color _invalidColor;
-    InRangeOfPlayerValidator[] _validators;
+    IValidatePlacement[] _validators;
 
-    void Awake() => _validators = GetComponents<InRangeOfPlayerValidator>();
+    void Awake() => _validators = GetComponents<IValidatePlacement>();
     public bool IsPlacementValid {  get; private set; }
 
     public void Place()
