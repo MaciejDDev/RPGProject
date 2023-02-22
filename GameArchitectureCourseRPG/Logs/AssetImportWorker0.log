@@ -349,3 +349,165 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 309.745966 seconds.
+  path: Assets/Resources/Placeables/ControlPanel - Placeable.prefab
+  artifactKey: Guid(62592ef6f66639a43bf22980f2c31d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Placeables/ControlPanel - Placeable.prefab using Guid(62592ef6f66639a43bf22980f2c31d5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99de4f091ba39a9662a09aadea53174b') in 0.068332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.491633 seconds.
+  path: Assets/Resources/Placeables/ControlPanel - Placeable 1.prefab
+  artifactKey: Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Placeables/ControlPanel - Placeable 1.prefab using Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feb7b50117b234dcf225be748fe5c957') in 0.011955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.876750 seconds.
+  path: Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab
+  artifactKey: Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab using Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e01f1f8da0f240a89ba0018127c34809') in 0.015753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 443.314154 seconds.
+  path: Assets/Resources/Items/ControlPanel.asset
+  artifactKey: Guid(ed4f1e8965933004eaa8054992c7b6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Items/ControlPanel.asset using Guid(ed4f1e8965933004eaa8054992c7b6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b7725d3d89153f55f20839d0dcaaf33') in 0.010994 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.859094 seconds.
+  path: Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab
+  artifactKey: Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab using Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be56aec7b33b3c796645fe9341cfee26') in 0.006982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.603515 seconds.
+  path: Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab
+  artifactKey: Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab using Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d98adc9ba3d0216886b429eab59a4bb') in 0.007380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.614695 seconds.
+  path: Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab
+  artifactKey: Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab using Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1709c824cd090843b340d2a6e30dc51') in 0.007097 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007256 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\GitHub\ArchitectureCourseRPG\GameArchitectureCourseRPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\GitHub\ArchitectureCourseRPG\GameArchitectureCourseRPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.141 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1142ms)
+		BeginReloadAssembly (161ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (53ms)
+		EndReloadAssembly (884ms)
+			LoadAssemblies (92ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (290ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (424ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (83ms)
+				ProcessInitializeOnLoadAttributes (284ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.83 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4139 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (188.0 KB). Loaded Objects now: 4702.
+Memory consumption went from 146.5 MB to 146.4 MB.
+Total: 3.127600 ms (FindLiveObjects: 0.286600 ms CreateObjectMapping: 0.227900 ms MarkObjects: 2.468700 ms  DeleteObjects: 0.143900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005287 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\GitHub\ArchitectureCourseRPG\GameArchitectureCourseRPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\GitHub\ArchitectureCourseRPG\GameArchitectureCourseRPG\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.108 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1109ms)
+		BeginReloadAssembly (143ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (42ms)
+		EndReloadAssembly (869ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (269ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (424ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (279ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4139 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (195.6 KB). Loaded Objects now: 4717.
+Memory consumption went from 146.6 MB to 146.4 MB.
+Total: 3.213800 ms (FindLiveObjects: 0.338600 ms CreateObjectMapping: 0.464100 ms MarkObjects: 2.271400 ms  DeleteObjects: 0.139100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 330.537998 seconds.
+  path: Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab
+  artifactKey: Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Placeables/DoorTogglePanel - Placeable.prefab using Guid(6f43ac6b425b4dc49a1f819b85b015c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd23b6ca2d3e6ddf63fb95a7e024e0031') in 0.069741 seconds 

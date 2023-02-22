@@ -37,7 +37,10 @@ public class Placeable : MonoBehaviour
 
         foreach (var renderer in _tintedRenderers)
         {
-            renderer.material.color = IsPlacementValid ? _defaultColor : _invalidColor;
+            if (renderer != null)
+                renderer.material.color = IsPlacementValid ? _defaultColor : _invalidColor;
+            else
+                Debug.LogError("Missing renderer on placeable", gameObject);
         }
     }
 }
