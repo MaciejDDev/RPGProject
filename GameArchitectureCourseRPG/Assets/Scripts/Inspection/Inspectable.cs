@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -27,6 +28,14 @@ public class Inspectable : MonoBehaviour
 
 
     void Awake() => _allConditions = GetComponents<IMet>();
+
+    IEnumerator Start()
+    {
+        yield return null;
+        if (_data == null)
+            InspectionManager.Bind(this);
+    }
+
     public bool MeetsConditions()
     {
         
