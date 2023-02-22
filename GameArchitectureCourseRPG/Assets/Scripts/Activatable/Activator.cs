@@ -5,21 +5,38 @@ using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
+    [SerializeField] ActivatorMode _mode;
+
     [SerializeField] float _radius = 10f;
     [SerializeField] string _activatableTag;
+
+
 
     public void Activate()
     {
 
-        var allActivatablesMatchingTag = FindObjectsOfType<Activatable>().
+        var activatables = FindObjectsOfType<Activatable>().
             Where(t => t.CompareTag(_activatableTag));
 
-
-        var allActivatablesInRange = allActivatablesMatchingTag.
-            Where(t => Vector3.Distance(transform.position, t.transform.position) <= _radius);
-        foreach (var activatable in allActivatablesInRange)
+        switch (_mode)
         {
-            activatable.Toggle();
+            case ActivatorMode.Nearest:
+                activatables = activatables.
+                OrderBy(t => Vector3.Distance(transform.position, t.transform.position)).Take(1);
+                break;
+            case ActivatorMode.All: break;
+            case ActivatorMode.AllInRadius:
+                activatables = activatables.
+                Where(t => Vector3.Distance(transform.position, t.transform.position) <= _radius);
+                break;
+            default:
+                break;
         }
+
+
+        foreach (var activatable in activatables)
+            activatable.Toggle();
     }
 }
+
+public enum ActivatorMode{ Nearest, All, AllInRadius }
