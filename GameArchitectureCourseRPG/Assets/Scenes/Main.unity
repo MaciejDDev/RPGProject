@@ -5391,10 +5391,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcfc613b2cf96e4fbe0c5f06d41ed0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hintText: {fileID: 2014904967}
+  _beforeText: {fileID: 2014904967}
+  _duringText: {fileID: 1704002930}
+  _completedText: {fileID: 1166983757}
   _progressBarFilledImage: {fileID: 799391392}
   _progressBar: {fileID: 982107494}
-  _completedInspectionText: {fileID: 1166983757}
 --- !u!225 &360279075
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20144,7 +20145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &982107495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32355,7 +32356,7 @@ GameObject:
   - component: {fileID: 1704002931}
   - component: {fileID: 1704002930}
   m_Layer: 5
-  m_Name: InspectingText (TMP)
+  m_Name: InteractingText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32401,7 +32402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Inspecting...
+  m_text: Interacting...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 01031f34caf020b43b77499c45a8d249, type: 2}
   m_sharedMaterial: {fileID: -7451548020503732703, guid: 01031f34caf020b43b77499c45a8d249, type: 2}

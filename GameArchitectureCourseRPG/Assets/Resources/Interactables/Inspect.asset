@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Inspect
   m_EditorClassIdentifier: 
   HotKey: 101
-  BeforeInteraction: E - Inspect
+  BeforeInteraction: Inspect
   DuringInteraction: Inspecting...
   CompletedInteraction: You discovered something
   FailedInteraction: You didn't see anything special

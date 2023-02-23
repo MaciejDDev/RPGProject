@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gather
   m_EditorClassIdentifier: 
   HotKey: 103
-  BeforeInteraction: 'G - Gather '
+  BeforeInteraction: 'Gather '
   DuringInteraction: Gathering...
   CompletedInteraction: You gathered smoething
   FailedInteraction: You couldn't get that

@@ -21,7 +21,9 @@ public class Interactable : MonoBehaviour
     InteractableData _data;
     IMet[] _allConditions;
 
-    public KeyCode HotKey => _interactionType.HotKey;
+    public InteractionType InteractionType => _interactionType;
+
+    //public KeyCode HotKey => _interactionType.HotKey;
 
     public static IReadOnlyCollection<Interactable> InteractablesInRange => _interactablesInRange;
     public static event Action<bool> InteractablesInRangeChanged;

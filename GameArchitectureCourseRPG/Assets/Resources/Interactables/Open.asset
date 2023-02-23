@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Open
   m_EditorClassIdentifier: 
   HotKey: 101
-  BeforeInteraction: E - Open
+  BeforeInteraction: Open
   DuringInteraction: Opening...
   CompletedInteraction: It opened
   FailedInteraction: It's locked

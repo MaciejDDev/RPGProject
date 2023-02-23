@@ -4,27 +4,44 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InspectionPanel : MonoBehaviour
+public class InteractionPanel : MonoBehaviour
 {
-    [SerializeField] TMP_Text _hintText;
+    [SerializeField] TMP_Text _beforeText;
+    [SerializeField] TMP_Text _duringText;
+    [SerializeField] TMP_Text _completedText;
     //[SerializeField] TMP_Text _progressText;
     [SerializeField] Image _progressBarFilledImage;
     [SerializeField] GameObject _progressBar;
-    [SerializeField] TMP_Text _completedInspectionText;
 
 
     private void OnEnable()
     {
-        _hintText.enabled = false;
-        _completedInspectionText.enabled = false;
-        Interactable.InteractablesInRangeChanged += UpdateTextState;
+        _beforeText.enabled = false;
+        _completedText.enabled = false;
+        //Interactable.InteractablesInRangeChanged += UpdateTextState;
+        FindObjectOfType<InteractionManager>().CurrentInteractableChanged += UpdateInteractionText;
         Interactable.AnyInteractionComplete += ShowCompletedInspectionText;
+    }
+
+    void UpdateInteractionText(Interactable interactable)
+    {
+        if (interactable == null)
+        {
+            _beforeText.enabled = false;
+        }
+        else
+        {
+            var interactionType = interactable.InteractionType;
+            _beforeText.SetText($"{interactionType.HotKey} - {interactionType.BeforeInteraction}");
+            _beforeText.enabled = true;
+            _duringText.SetText(interactionType.DuringInteraction);
+        }
     }
 
     private void ShowCompletedInspectionText(Interactable inspectable, string completedInspectionMessage)
     {
-        _completedInspectionText.SetText(completedInspectionMessage);
-        _completedInspectionText.enabled= true;
+        _completedText.SetText(completedInspectionMessage);
+        _completedText.enabled= true;
         float messageTime = completedInspectionMessage.Length / 5f;
         messageTime= Mathf.Clamp(messageTime, 3f, 10f);
         StartCoroutine(FadecompletedText(messageTime));
@@ -32,18 +49,18 @@ public class InspectionPanel : MonoBehaviour
 
     IEnumerator FadecompletedText(float messageTime)
     {
-        _completedInspectionText.alpha= 1f;
-        while (_completedInspectionText.alpha > 0)
+        _completedText.alpha= 1f;
+        while (_completedText.alpha > 0)
         {
             yield return null;
-            _completedInspectionText.alpha -= Time.deltaTime / messageTime;
+            _completedText.alpha -= Time.deltaTime / messageTime;
         }
-        _completedInspectionText.enabled= false;
+        _completedText.enabled= false;
     }
 
     void OnDisable() => Interactable.InteractablesInRangeChanged -= UpdateTextState;
 
-    void UpdateTextState(bool enableHint) => _hintText.enabled = enableHint;
+    void UpdateTextState(bool enableHint) => _beforeText.enabled = enableHint;
 
     private void Update()
     {

@@ -13,6 +13,8 @@ public class InteractionManager : MonoBehaviour
 
     public static float InteractionProgress => _currentInteractable?.InteractionProgress ?? 0f;
 
+    public event Action<Interactable> CurrentInteractableChanged;
+
     void Awake() => Interactable.InteractablesInRangeChanged += HandleInteractablesInRangeChanged;
     void OnDestroy() => Interactable.InteractablesInRangeChanged -= HandleInteractablesInRangeChanged;
 
@@ -22,12 +24,13 @@ public class InteractionManager : MonoBehaviour
             OrderBy(t => Vector3.Distance(t.transform.position, transform.position)).
             FirstOrDefault();
         _currentInteractable = nearest;
+        CurrentInteractableChanged?.Invoke(_currentInteractable);
     }
 
     void Update()
     {
 
-        if ( _currentInteractable != null && Input.GetKey(_currentInteractable.HotKey) )
+        if ( _currentInteractable != null && Input.GetKey(_currentInteractable.InteractionType.HotKey) )
         {
             _currentInteractable.Interact();
             Interacting = true;
