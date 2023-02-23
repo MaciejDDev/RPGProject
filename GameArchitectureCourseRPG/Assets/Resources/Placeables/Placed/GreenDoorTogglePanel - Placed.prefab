@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6985554669992112185}
   - component: {fileID: 6985554669992112184}
   - component: {fileID: 6985554669992112179}
-  - component: {fileID: 2143886703652254992}
   - component: {fileID: 592400111242171103}
+  - component: {fileID: 2143886703652254992}
   m_Layer: 0
   m_Name: GreenDoorTogglePanel - Placed
   m_TagString: Untagged
@@ -932,6 +932,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.54
   m_Center: {x: 0.007086128, y: 0.875, z: 0}
+--- !u!114 &592400111242171103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985554669992112187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568a2fbc58128624a95c8dbbe0295b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 2
+  _activatableTag: GreenDoor
+  _radius: 10
 --- !u!114 &2143886703652254992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,20 +980,6 @@ MonoBehaviour:
         m_CallState: 2
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
---- !u!114 &592400111242171103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6985554669992112187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568a2fbc58128624a95c8dbbe0295b60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
-  _activatableTag: GreenDoor
 --- !u!1 &6985554670627090265
 GameObject:
   m_ObjectHideFlags: 0

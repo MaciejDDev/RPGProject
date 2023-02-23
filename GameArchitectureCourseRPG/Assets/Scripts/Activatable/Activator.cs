@@ -7,9 +7,9 @@ public class Activator : MonoBehaviour
 {
     [SerializeField] ActivatorMode _mode;
 
-    [SerializeField] float _radius = 10f;
     [SerializeField] string _activatableTag;
-
+    [DrawIf(nameof(_mode), ActivatorMode.AllInRadius)]
+    [SerializeField] float _radius = 10f;
 
 
     public void Activate()
