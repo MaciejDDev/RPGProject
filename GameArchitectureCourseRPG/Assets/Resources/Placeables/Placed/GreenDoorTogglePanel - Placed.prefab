@@ -819,7 +819,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3276
+  m_VersionIndex: 3285
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -956,14 +956,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6985554669992112187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a82737840a81a4aa153bf2cb05e304, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bdaa713a42318249b80c09787a5b7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToInspect: 3
-  _completedInspectionText: 'Toggled Doors
-
-'
-  OnInspectionCompleted:
+  _timeToInteract: 3
+  _completedInteractionText: 
+  OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 592400111242171103}
@@ -1296,7 +1294,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1172
+  m_VersionIndex: 1181
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2207,7 +2205,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 585
+  m_VersionIndex: 594
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

@@ -5,10 +5,10 @@ using UnityEngine.Rendering;
 public class MetInspectedCondition : MonoBehaviour, IMet
 {
 
-    [SerializeField] Inspectable _requiredInspectable;
+    [SerializeField] Interactable _requiredInspectable;
 
 
-    public bool Met() => _requiredInspectable.WasFullyInspected;
+    public bool Met() => _requiredInspectable.WasFullyInteracted;
 
     void OnDrawGizmos()
     {

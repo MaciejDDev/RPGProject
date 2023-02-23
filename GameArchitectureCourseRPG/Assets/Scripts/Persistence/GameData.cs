@@ -5,14 +5,14 @@ using System.Collections.Generic;
 public class GameData
 {
     public List<GameFlagData> GameFlagDatas;
-    public List<InspectableData> InspectableDatas;
+    public List<InteractableData> InteractableDatas;
     public List<SlotData> SlotDatas;
     public List<PlaceableData> PlaceableDatas;
 
     public GameData()
     {
         GameFlagDatas = new List<GameFlagData>();
-        InspectableDatas= new List<InspectableData>();
+        InteractableDatas= new List<InteractableData>();
         SlotDatas = new List<SlotData>();
         PlaceableDatas = new List<PlaceableData>();
     }

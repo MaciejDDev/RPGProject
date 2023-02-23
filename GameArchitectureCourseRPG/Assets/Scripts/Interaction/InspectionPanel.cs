@@ -17,11 +17,11 @@ public class InspectionPanel : MonoBehaviour
     {
         _hintText.enabled = false;
         _completedInspectionText.enabled = false;
-        Inspectable.InspectablesInRangeChanged += UpdateTextState;
-        Inspectable.AnyInspectionComplete += ShowCompletedInspectionText;
+        Interactable.InteractablesInRangeChanged += UpdateTextState;
+        Interactable.AnyInteractionComplete += ShowCompletedInspectionText;
     }
 
-    private void ShowCompletedInspectionText(Inspectable inspectable, string completedInspectionMessage)
+    private void ShowCompletedInspectionText(Interactable inspectable, string completedInspectionMessage)
     {
         _completedInspectionText.SetText(completedInspectionMessage);
         _completedInspectionText.enabled= true;
@@ -41,16 +41,16 @@ public class InspectionPanel : MonoBehaviour
         _completedInspectionText.enabled= false;
     }
 
-    void OnDisable() => Inspectable.InspectablesInRangeChanged -= UpdateTextState;
+    void OnDisable() => Interactable.InteractablesInRangeChanged -= UpdateTextState;
 
     void UpdateTextState(bool enableHint) => _hintText.enabled = enableHint;
 
     private void Update()
     {
-        if(InspectionManager.Inspecting)
+        if(InteractionManager.Interacting)
         {
             //_progressText.SetText(InspectionManager.InspectionProgress.ToString());
-            _progressBarFilledImage.fillAmount= InspectionManager.InspectionProgress;
+            _progressBarFilledImage.fillAmount= InteractionManager.InteractionProgress;
             _progressBar.SetActive(true);
         }
         else if(_progressBar.activeSelf)
