@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bdaa713a42318249b80c09787a5b7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionType: {fileID: 11400000, guid: ea55ab33dcd801e46a207fe5d5f5d9a7, type: 2}
+  _interactionType: {fileID: 11400000, guid: 62b1de0b240ea454486a1bd909a6b95d, type: 2}
   _timeToInteract: 3
   OnInteractionCompleted:
     m_PersistentCalls:

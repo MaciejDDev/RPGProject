@@ -42,6 +42,12 @@ public class Interactable : MonoBehaviour
             InteractionManager.Bind(this);
     }
 
+    void OnValidate()
+    {
+        if (_interactionType == null)
+            _interactionType = Resources.FindObjectsOfTypeAll<InteractionType>().
+                Where(t => t.IsDefault).FirstOrDefault();
+    }
     public bool MeetsConditions()
     {
         
@@ -58,6 +64,23 @@ public class Interactable : MonoBehaviour
         _data = interactableData;
         if (WasFullyInteracted)
             RestoreInteractionState();
+    }
+    public void Interact()
+    {
+        if(WasFullyInteracted)
+            return; 
+        _data.TimeInteracted += Time.deltaTime;
+        if(WasFullyInteracted)
+        {
+            if (_requireMinigame)
+            {
+                _interactablesInRange.Remove(this);
+                InteractablesInRangeChanged?.Invoke(_interactablesInRange.Any());
+                MinigameManager.Instance.StartMinigame(_minigameSettings, HandleMinigameCompleted);
+            }
+            else
+                CompleteInteraction();
+        }
     }
 
 
@@ -78,23 +101,6 @@ public class Interactable : MonoBehaviour
 
         }
     }
-    public void Interact()
-    {
-        if(WasFullyInteracted)
-            return; 
-        _data.TimeInteracted += Time.deltaTime;
-        if(WasFullyInteracted)
-        {
-            if (_requireMinigame)
-            {
-                _interactablesInRange.Remove(this);
-                InteractablesInRangeChanged?.Invoke(_interactablesInRange.Any());
-                MinigameManager.Instance.StartMinigame(_minigameSettings, HandleMinigameCompleted);
-            }
-            else
-                CompleteInteraction();
-        }
-    }
 
     void HandleMinigameCompleted(MinigameResult result)
     {
@@ -107,7 +113,7 @@ public class Interactable : MonoBehaviour
             _data.TimeInteracted = 0f;
         }
     }
-void CompleteInteraction()
+    void CompleteInteraction()
     {
         
         _interactablesInRange.Remove(this);
