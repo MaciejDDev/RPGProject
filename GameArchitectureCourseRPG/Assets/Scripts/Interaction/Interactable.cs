@@ -8,8 +8,9 @@ using UnityEngine.Serialization;
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField] InteractionType _interactionType;
+
     [SerializeField] float _timeToInteract = 3f;
-    [FormerlySerializedAs("_completedInspectionText")][SerializeField, TextArea] string _completedInteractionText;
     [SerializeField] UnityEvent OnInteractionCompleted;
     [SerializeField] bool _requireMinigame;
     [SerializeField] MinigameSettings _minigameSettings;
@@ -19,6 +20,8 @@ public class Interactable : MonoBehaviour
     
     InteractableData _data;
     IMet[] _allConditions;
+
+    public KeyCode HotKey => _interactionType.HotKey;
 
     public static IReadOnlyCollection<Interactable> InteractablesInRange => _interactablesInRange;
     public static event Action<bool> InteractablesInRangeChanged;
@@ -108,7 +111,7 @@ void CompleteInteraction()
         _interactablesInRange.Remove(this);
         InteractablesInRangeChanged?.Invoke(_interactablesInRange.Any());
         OnInteractionCompleted?.Invoke();
-        AnyInteractionComplete?.Invoke(this, _completedInteractionText);
+        AnyInteractionComplete?.Invoke(this, _interactionType.CompletedInteraction);
 
     }
 
