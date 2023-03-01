@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] InteractionType _interactionType;
+    [SerializeField] protected InteractionType _interactionType;
 
     [SerializeField] float _timeToInteract = 3f;
     [SerializeField] UnityEvent OnInteractionCompleted;
@@ -18,10 +18,10 @@ public class Interactable : MonoBehaviour
     static HashSet<Interactable> _interactablesInRange = new HashSet<Interactable>();
     
     
-    InteractableData _data;
+    protected InteractableData _data;
     IMet[] _allConditions;
 
-    public InteractionType InteractionType => _interactionType;
+    public virtual InteractionType InteractionType => _interactionType;
 
     //public KeyCode HotKey => _interactionType.HotKey;
 
@@ -113,14 +113,19 @@ public class Interactable : MonoBehaviour
             _data.TimeInteracted = 0f;
         }
     }
-    void CompleteInteraction()
+     protected virtual void CompleteInteraction()
     {
-        
+
         _interactablesInRange.Remove(this);
+        SendInteractionComplete();
+
+    }
+
+    protected void SendInteractionComplete()
+    {
         InteractablesInRangeChanged?.Invoke(_interactablesInRange.Any());
         OnInteractionCompleted?.Invoke();
-        AnyInteractionComplete?.Invoke(this, _interactionType.CompletedInteraction);
-
+        AnyInteractionComplete?.Invoke(this, InteractionType.CompletedInteraction);
     }
 
     void RestoreInteractionState()

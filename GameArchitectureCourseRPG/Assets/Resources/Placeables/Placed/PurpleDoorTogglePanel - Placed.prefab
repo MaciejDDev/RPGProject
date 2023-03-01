@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6698049977577397388}
   - component: {fileID: 6698049977577397389}
   - component: {fileID: 6698049977577397382}
-  - component: {fileID: 2433476074387216805}
   - component: {fileID: 3764249262441823850}
+  - component: {fileID: -5084698937545472580}
   m_Layer: 0
   m_Name: PurpleDoorTogglePanel - Placed
   m_TagString: Untagged
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3285
+  m_VersionIndex: 3294
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -932,7 +932,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.54
   m_Center: {x: 0.007086128, y: 0.875, z: 0}
---- !u!114 &2433476074387216805
+--- !u!114 &3764249262441823850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -941,11 +941,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 6698049977577397390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bdaa713a42318249b80c09787a5b7fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 568a2fbc58128624a95c8dbbe0295b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionType: {fileID: 11400000, guid: 62b1de0b240ea454486a1bd909a6b95d, type: 2}
-  _timeToInteract: 3
+  _mode: 1
+  _activatableTag: PurpleDoor
+  _radius: 10
+--- !u!114 &-5084698937545472580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698049977577397390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79ba4e2d67715845a5515f6f9f3eb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionType: {fileID: 11400000, guid: ea55ab33dcd801e46a207fe5d5f5d9a7, type: 2}
+  _timeToInteract: 1
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -963,21 +978,7 @@ MonoBehaviour:
         m_CallState: 2
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
---- !u!114 &3764249262441823850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6698049977577397390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568a2fbc58128624a95c8dbbe0295b60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mode: 1
-  _activatableTag: PurpleDoor
-  _radius: 10
+  _toggledinteractionType: {fileID: 11400000, guid: 72bf899753912d64d8d7db9f2a94e859, type: 2}
 --- !u!1 &6698049978284065772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1295,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1181
+  m_VersionIndex: 1190
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2205,7 +2206,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 594
+  m_VersionIndex: 603
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
