@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour
 
     [SerializeField] float _timeToInteract = 3f;
     [SerializeField] UnityEvent OnInteractionCompleted;
+    [SerializeField] UnityEvent OnLastInteractionCompleted;
     [SerializeField] bool _requireMinigame;
     [SerializeField] MinigameSettings _minigameSettings;
     [SerializeField] int _maxInteractions = 1;
@@ -121,13 +122,23 @@ public class Interactable : MonoBehaviour
      void CompleteInteraction()
     {
         _data.InteractionCount++;
-        if (_data.InteractionCount < _maxInteractions || _maxInteractions == 0)
-            _data.TimeInteracted = 0f;
 
-        SendInteractionComplete();
+        if (_maxInteractions == 0)
+        {
+            _data.TimeInteracted = 0f;
+        }
+        else
+        {
+            if (_data.InteractionCount < _maxInteractions)
+                _data.TimeInteracted = 0f;
+            else
+                OnLastInteractionCompleted.Invoke();
+        }
 
         if (WasFullyInteracted)
             _interactablesInRange.Remove(this);
+
+        SendInteractionComplete();
     }
 
 

@@ -674,6 +674,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -2412,6 +2415,9 @@ MonoBehaviour:
   _interactionType: {fileID: 11400000, guid: 62b1de0b240ea454486a1bd909a6b95d, type: 2}
   _timeToInteract: 3
   OnInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
   _requireMinigame: 1
@@ -18095,6 +18101,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -21372,6 +21381,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   _requireMinigame: 1
   _minigameSettings: {fileID: 11400000, guid: 9daa43ae4ff957747bc6ae9eb0d40bd8, type: 2}
   _maxInteractions: 1
@@ -23339,6 +23351,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -24668,6 +24683,9 @@ MonoBehaviour:
   _interactionType: {fileID: 11400000, guid: 62b1de0b240ea454486a1bd909a6b95d, type: 2}
   _timeToInteract: 3
   OnInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
   _requireMinigame: 0
@@ -28977,7 +28995,7 @@ PrefabInstance:
       objectReference: {fileID: 1924520471}
     - target: {fileID: 6985554669992112180, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_VersionIndex
-      value: 3318
+      value: 3321
       objectReference: {fileID: 0}
     - target: {fileID: 6985554669992112181, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_RootOrder
@@ -29045,7 +29063,7 @@ PrefabInstance:
       objectReference: {fileID: 1237586940}
     - target: {fileID: 6985554670627090259, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_VersionIndex
-      value: 1214
+      value: 1217
       objectReference: {fileID: 0}
     - target: {fileID: 6985554670627090260, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_Mesh
@@ -29061,7 +29079,7 @@ PrefabInstance:
       objectReference: {fileID: 190901588}
     - target: {fileID: 6985554671715699012, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_VersionIndex
-      value: 627
+      value: 630
       objectReference: {fileID: 0}
     - target: {fileID: 6985554671715699016, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_Mesh
@@ -32955,6 +32973,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -36584,6 +36605,33 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 7710ac54465c4cf45a6ee1535afbb302, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLastInteractionCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 810460400}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dispenser is EMPTY
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1970778736}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 5a26de236ce89e94b963be8fa2b7ade6, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -41526,7 +41574,7 @@ PrefabInstance:
       objectReference: {fileID: 240548117}
     - target: {fileID: 6698049977577397377, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_VersionIndex
-      value: 3312
+      value: 3315
       objectReference: {fileID: 0}
     - target: {fileID: 6698049977577397388, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_Mesh
@@ -41558,7 +41606,7 @@ PrefabInstance:
       objectReference: {fileID: 809812111}
     - target: {fileID: 6698049978284065766, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_VersionIndex
-      value: 1208
+      value: 1211
       objectReference: {fileID: 0}
     - target: {fileID: 6698049979300996593, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_Mesh
@@ -41566,7 +41614,7 @@ PrefabInstance:
       objectReference: {fileID: 696609058}
     - target: {fileID: 6698049979300996593, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_VersionIndex
-      value: 621
+      value: 624
       objectReference: {fileID: 0}
     - target: {fileID: 6698049979300996604, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_Mesh
