@@ -62,6 +62,11 @@ public class Interactable : MonoBehaviour
     public void Bind(InteractableData interactableData)
     {
         _data = interactableData;
+        OnBound();
+    }
+
+    protected virtual void OnBound()
+    {
         if (WasFullyInteracted)
             RestoreInteractionState();
     }
@@ -113,12 +118,16 @@ public class Interactable : MonoBehaviour
             _data.TimeInteracted = 0f;
         }
     }
-     protected virtual void CompleteInteraction()
+     void CompleteInteraction()
     {
-
-        _interactablesInRange.Remove(this);
+        _data.InteractionCount++;
         SendInteractionComplete();
+        AfterCompleteInteraction();
+    }
 
+    protected virtual void AfterCompleteInteraction()
+    {
+        _interactablesInRange.Remove(this);
     }
 
     protected void SendInteractionComplete()
@@ -128,7 +137,7 @@ public class Interactable : MonoBehaviour
         AnyInteractionComplete?.Invoke(this, InteractionType.CompletedInteraction);
     }
 
-    void RestoreInteractionState()
+    protected void RestoreInteractionState()
     {
         OnInteractionCompleted?.Invoke();
     }

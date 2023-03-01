@@ -3,15 +3,20 @@
 public class ToggledInteractable : Interactable
 {
     [SerializeField] InteractionType _toggledinteractionType;
-    bool _toggleState;
+    bool toggleState => _data.InteractionCount % 2 == 1;
 
-    public override InteractionType InteractionType => _toggleState ? _toggledinteractionType : _interactionType;
+    public override InteractionType InteractionType => toggleState ? _toggledinteractionType : _interactionType;
 
 
-    protected override void CompleteInteraction()
+    protected override void AfterCompleteInteraction()
     {
-        _toggleState = !_toggleState;
-        SendInteractionComplete();
         _data.TimeInteracted = 0f;
+    }
+    protected override void OnBound()
+    {
+        if (toggleState)
+        {
+            RestoreInteractionState();
+        }
     }
 }
