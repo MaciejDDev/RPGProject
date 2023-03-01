@@ -14,7 +14,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] UnityEvent OnInteractionCompleted;
     [SerializeField] bool _requireMinigame;
     [SerializeField] MinigameSettings _minigameSettings;
-
+    [SerializeField] int _maxInteractions = 1;
     static HashSet<Interactable> _interactablesInRange = new HashSet<Interactable>();
     
     
@@ -121,14 +121,15 @@ public class Interactable : MonoBehaviour
      void CompleteInteraction()
     {
         _data.InteractionCount++;
+        if (_data.InteractionCount < _maxInteractions || _maxInteractions == 0)
+            _data.TimeInteracted = 0f;
+
         SendInteractionComplete();
-        AfterCompleteInteraction();
+
+        if (WasFullyInteracted)
+            _interactablesInRange.Remove(this);
     }
 
-    protected virtual void AfterCompleteInteraction()
-    {
-        _interactablesInRange.Remove(this);
-    }
 
     protected void SendInteractionComplete()
     {
