@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] float _timeToInteract = 3f;
     [SerializeField] UnityEvent OnInteractionCompleted;
     [SerializeField] UnityEvent OnLastInteractionCompleted;
+    [SerializeField] bool _rerunLastInteractionCompletedOnGameLoad;
     [SerializeField] bool _requireMinigame;
     [SerializeField] MinigameSettings _minigameSettings;
     [SerializeField] int _maxInteractions = 1;
@@ -151,6 +152,7 @@ public class Interactable : MonoBehaviour
 
     protected void RestoreInteractionState()
     {
-        OnInteractionCompleted?.Invoke();
+        if (_rerunLastInteractionCompletedOnGameLoad)
+        OnLastInteractionCompleted?.Invoke();
     }
 }

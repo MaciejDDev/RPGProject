@@ -677,6 +677,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  _rerunLastInteractionCompletedOnGameLoad: 0
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -2420,6 +2421,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  _rerunLastInteractionCompletedOnGameLoad: 0
   _requireMinigame: 1
   _minigameSettings: {fileID: 11400000, guid: fa5da8a626df65b47b0eb019d1aa7413, type: 2}
   _maxInteractions: 1
@@ -3377,7 +3379,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17146
+  m_Name: pb_Mesh-2626
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12540,7 +12542,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17180
+  m_Name: pb_Mesh-2660
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15895,7 +15897,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17166
+  m_Name: pb_Mesh-2646
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18104,6 +18106,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  _rerunLastInteractionCompletedOnGameLoad: 0
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -21384,6 +21387,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  _rerunLastInteractionCompletedOnGameLoad: 0
   _requireMinigame: 1
   _minigameSettings: {fileID: 11400000, guid: 9daa43ae4ff957747bc6ae9eb0d40bd8, type: 2}
   _maxInteractions: 1
@@ -23354,6 +23358,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  _rerunLastInteractionCompletedOnGameLoad: 0
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -24688,6 +24693,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  _rerunLastInteractionCompletedOnGameLoad: 0
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -28995,7 +29001,7 @@ PrefabInstance:
       objectReference: {fileID: 1924520471}
     - target: {fileID: 6985554669992112180, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_VersionIndex
-      value: 3321
+      value: 3324
       objectReference: {fileID: 0}
     - target: {fileID: 6985554669992112181, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_RootOrder
@@ -29063,7 +29069,7 @@ PrefabInstance:
       objectReference: {fileID: 1237586940}
     - target: {fileID: 6985554670627090259, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_VersionIndex
-      value: 1217
+      value: 1220
       objectReference: {fileID: 0}
     - target: {fileID: 6985554670627090260, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_Mesh
@@ -29079,7 +29085,7 @@ PrefabInstance:
       objectReference: {fileID: 190901588}
     - target: {fileID: 6985554671715699012, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_VersionIndex
-      value: 630
+      value: 633
       objectReference: {fileID: 0}
     - target: {fileID: 6985554671715699016, guid: 7b4f2c2cf5eca0a45b9d096edbc063c4, type: 3}
       propertyPath: m_Mesh
@@ -32976,6 +32982,7 @@ MonoBehaviour:
   OnLastInteractionCompleted:
     m_PersistentCalls:
       m_Calls: []
+  _rerunLastInteractionCompletedOnGameLoad: 0
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 1
@@ -36637,6 +36644,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _rerunLastInteractionCompletedOnGameLoad: 1
   _requireMinigame: 0
   _minigameSettings: {fileID: 0}
   _maxInteractions: 5
@@ -41574,7 +41582,7 @@ PrefabInstance:
       objectReference: {fileID: 240548117}
     - target: {fileID: 6698049977577397377, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_VersionIndex
-      value: 3315
+      value: 3318
       objectReference: {fileID: 0}
     - target: {fileID: 6698049977577397388, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_Mesh
@@ -41606,7 +41614,7 @@ PrefabInstance:
       objectReference: {fileID: 809812111}
     - target: {fileID: 6698049978284065766, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_VersionIndex
-      value: 1211
+      value: 1214
       objectReference: {fileID: 0}
     - target: {fileID: 6698049979300996593, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_Mesh
@@ -41614,7 +41622,7 @@ PrefabInstance:
       objectReference: {fileID: 696609058}
     - target: {fileID: 6698049979300996593, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_VersionIndex
-      value: 624
+      value: 627
       objectReference: {fileID: 0}
     - target: {fileID: 6698049979300996604, guid: 0fa801be5d686354cb8f81e8829200cb, type: 3}
       propertyPath: m_Mesh
