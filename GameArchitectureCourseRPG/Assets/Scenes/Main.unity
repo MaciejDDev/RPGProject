@@ -26220,7 +26220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _requiredStatValue: 5
-  _requiredStat: {fileID: 0}
+  _requiredStat: {fileID: 11400000, guid: e790b89fe10f2c94daf7cf21c76c88f7, type: 2}
 --- !u!1 &1380927099
 GameObject:
   m_ObjectHideFlags: 0
