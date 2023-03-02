@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 [Serializable]
 public class GameData
@@ -8,6 +9,7 @@ public class GameData
     public List<InteractableData> InteractableDatas;
     public List<SlotData> SlotDatas;
     public List<PlaceableData> PlaceableDatas;
+    public List<StatData> StatDatas;
 
     public GameData()
     {
@@ -15,6 +17,6 @@ public class GameData
         InteractableDatas= new List<InteractableData>();
         SlotDatas = new List<SlotData>();
         PlaceableDatas = new List<PlaceableData>();
+        StatDatas = new List<StatData>();
     }
 }
-
