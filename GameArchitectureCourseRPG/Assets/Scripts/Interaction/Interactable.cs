@@ -30,6 +30,8 @@ public class Interactable : MonoBehaviour
     public static IReadOnlyCollection<Interactable> InteractablesInRange => _interactablesInRange;
     public static event Action<bool> InteractablesInRangeChanged;
     public static event Action<Interactable, string> AnyInteractionComplete;
+   
+    public event Action InteractionCompleted;
     public float InteractionProgress => _data?.TimeInteracted ?? 0f / _timeToInteract;
 
     public bool WasFullyInteracted => InteractionProgress >= 1f;
@@ -135,6 +137,8 @@ public class Interactable : MonoBehaviour
             else
                 OnLastInteractionCompleted.Invoke();
         }
+
+        InteractionCompleted?.Invoke();
 
         if (WasFullyInteracted)
             _interactablesInRange.Remove(this);

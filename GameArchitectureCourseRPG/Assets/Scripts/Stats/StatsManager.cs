@@ -40,4 +40,12 @@ public class StatsManager : MonoBehaviour
             }
         }
     }
+
+    public void Modify(Stat stat, int amount)
+    {
+        if(_myStats.TryGetValue(stat, out var statData))
+        {
+            statData.Value += amount;
+        }
+    }
 }
