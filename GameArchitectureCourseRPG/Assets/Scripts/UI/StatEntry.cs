@@ -11,20 +11,19 @@ public class StatEntry : MonoBehaviour
     
     
     StatData _statData;
+    ToggleablePanel _toggleablePanel;
 
     public void Bind(StatData statData)
     {
         _statData = statData;
+        _name.SetText(_statData.Name);
     }
 
-    void Start()
-    {
-        
-    }
+    void Awake() => _toggleablePanel = GetComponentInParent<ToggleablePanel>();
 
     void Update()
     {
-        _name.SetText(_statData.Name);
+        if (_toggleablePanel.IsVisible)
         _value.SetText(_statData.Value.ToString());
     }
 }

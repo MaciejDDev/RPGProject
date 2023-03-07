@@ -12,14 +12,16 @@ public class InteractableStatCondition : MonoBehaviour, IMet
     
     Interactable _interactable;
 
-    public string NotMetMessage => $"<color=red>{_requiredStat.name} ({_requiredStatValue})</color>";
+    public string NotMetMessage { get; private set; }
 
-    public string MetMessage => $"<color=green>{_requiredStat.name} ({_requiredStatValue})</color>";
+    public string MetMessage { get; private set; }
 
     void Awake()
     {
         _interactable = GetComponent<Interactable>();
         _interactable.InteractionCompleted += HandleInteractionCompleted;
+        NotMetMessage = $"<color=red>{_requiredStat.name} ({_requiredStatValue})</color>";
+        MetMessage = $"<color=green>{_requiredStat.name} ({_requiredStatValue})</color>";
     }
 
     void OnDestroy() => _interactable.InteractionCompleted -= HandleInteractionCompleted;
