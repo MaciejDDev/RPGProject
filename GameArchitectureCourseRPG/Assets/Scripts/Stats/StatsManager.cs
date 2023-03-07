@@ -10,6 +10,8 @@ public class StatsManager : MonoBehaviour
     Dictionary<Stat, StatData> _myStats = new Dictionary<Stat, StatData>();
     List<StatData> _statDatas;
 
+
+    public bool Bound { get; private set; }
     public static StatsManager Instance { get; private set; }
     void OnValidate() => _allStats = Extensions.GetAllInstances<Stat>();
     void Awake() => Instance = this;
@@ -39,6 +41,7 @@ public class StatsManager : MonoBehaviour
                 _myStats[stat] = statData;
             }
         }
+        Bound = true;
     }
 
     public void Modify(Stat stat, int amount)
@@ -47,5 +50,10 @@ public class StatsManager : MonoBehaviour
         {
             statData.Value += amount;
         }
+    }
+
+    public IEnumerable<StatData> GetAll()
+    {
+        return _myStats.Values;
     }
 }
