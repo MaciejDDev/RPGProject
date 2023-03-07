@@ -63,7 +63,9 @@ public class Interactable : MonoBehaviour
                 ConditionMessage = condition.NotMetMessage;
                 return false;
             }
+            ConditionMessage = condition.MetMessage;
         }
+        
         return true;
     }
 

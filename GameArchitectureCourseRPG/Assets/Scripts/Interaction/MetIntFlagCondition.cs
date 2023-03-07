@@ -9,4 +9,6 @@ public class MetIntFlagCondition : MonoBehaviour, IMet
     public bool Met() => _requiredFlag.Value >= _requiredValue;
 
     public string NotMetMessage => $"<color=red>{_requiredFlag.name} ({_requiredValue})</color>";
+
+    public string MetMessage { get; }
 }

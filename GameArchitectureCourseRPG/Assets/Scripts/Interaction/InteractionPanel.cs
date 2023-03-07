@@ -17,6 +17,7 @@ public class InteractionPanel : MonoBehaviour
 
     private void OnEnable()
     {
+        _conditionText.enabled = false;
         _beforeText.enabled = false;
         _completedText.enabled = false;
         //Interactable.InteractablesInRangeChanged += UpdateTextState;
@@ -35,7 +36,7 @@ public class InteractionPanel : MonoBehaviour
         {
             var interactionType = interactable.InteractionType;
             _beforeText.SetText($"{interactionType.HotKey} - {interactionType.BeforeInteraction}");
-            _beforeText.enabled = true;
+            _beforeText.enabled = interactable.CheckConditions();
             _duringText.SetText(interactionType.DuringInteraction);
             _conditionText.enabled = true;
             _conditionText.SetText(interactable.ConditionMessage);

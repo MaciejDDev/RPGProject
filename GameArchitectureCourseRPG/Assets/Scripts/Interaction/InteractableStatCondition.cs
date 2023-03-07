@@ -14,6 +14,8 @@ public class InteractableStatCondition : MonoBehaviour, IMet
 
     public string NotMetMessage => $"<color=red>{_requiredStat.name} ({_requiredStatValue})</color>";
 
+    public string MetMessage => $"<color=green>{_requiredStat.name} ({_requiredStatValue})</color>";
+
     void Awake()
     {
         _interactable = GetComponent<Interactable>();
