@@ -7,6 +7,7 @@ public class MetInspectedCondition : MonoBehaviour, IMet
 
     [SerializeField] Interactable _requiredInspectable;
 
+    public string NotMetMessage { get; }
 
     public bool Met() => _requiredInspectable.WasFullyInteracted;
 

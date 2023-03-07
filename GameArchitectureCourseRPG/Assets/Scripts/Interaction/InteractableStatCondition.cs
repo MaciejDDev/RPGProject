@@ -7,10 +7,12 @@ public class InteractableStatCondition : MonoBehaviour, IMet
 {
     [SerializeField] int _requiredStatValue;
     [SerializeField] Stat _requiredStat;
+    [SerializeField] bool _skillupOnInteractionCompleted = true;
     
     
     Interactable _interactable;
-    [SerializeField] bool _skillupOnInteractionCompleted = true;
+
+    public string NotMetMessage => $"<color=red>{_requiredStat.name} ({_requiredStatValue})</color>";
 
     void Awake()
     {

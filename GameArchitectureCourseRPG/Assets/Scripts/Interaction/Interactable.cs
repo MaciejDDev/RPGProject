@@ -36,6 +36,7 @@ public class Interactable : MonoBehaviour
 
     public bool WasFullyInteracted => InteractionProgress >= 1f;
 
+    public string ConditionMessage { get; private set; }
 
     void Awake() => _allConditions = GetComponents<IMet>();
 
@@ -52,13 +53,16 @@ public class Interactable : MonoBehaviour
             _interactionType = Resources.FindObjectsOfTypeAll<InteractionType>().
                 Where(t => t.IsDefault).FirstOrDefault();
     }
-    public bool MeetsConditions()
+    public bool CheckConditions()
     {
         
         foreach (var condition in _allConditions)
         {
             if (condition.Met() == false)
+            {
+                ConditionMessage = condition.NotMetMessage;
                 return false;
+            }
         }
         return true;
     }
@@ -95,7 +99,7 @@ public class Interactable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && !WasFullyInteracted && MeetsConditions())
+        if(other.CompareTag("Player") && !WasFullyInteracted)
         {
             _interactablesInRange.Add(this);
             InteractablesInRangeChanged?.Invoke(true);

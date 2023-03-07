@@ -24,13 +24,19 @@ public class InteractionManager : MonoBehaviour
             OrderBy(t => Vector3.Distance(t.transform.position, transform.position)).
             FirstOrDefault();
         _currentInteractable = nearest;
+        _currentInteractable?.CheckConditions();
         CurrentInteractableChanged?.Invoke(_currentInteractable);
     }
 
     void Update()
     {
+        if ( _currentInteractable == null || !_currentInteractable.CheckConditions())
+        {
+            Interacting = false;
+            return;
+        }
 
-        if ( _currentInteractable != null && Input.GetKey(_currentInteractable.InteractionType.HotKey) )
+        if (Input.GetKey(_currentInteractable.InteractionType.HotKey) )
         {
             _currentInteractable.Interact();
             Interacting = true;
