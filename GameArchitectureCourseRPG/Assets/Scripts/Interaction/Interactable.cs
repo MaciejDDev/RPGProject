@@ -41,8 +41,8 @@ public class Interactable : MonoBehaviour
     {
         get
         {
-            if (transform.root == transform)
-                return name;
+            if (transform.root.TryGetComponent<UniqueKey>(out var uniqueKey))
+                return uniqueKey.Key + " - " + name;
             return transform.root.name + " - " + name;
 
         }
