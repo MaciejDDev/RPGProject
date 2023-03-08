@@ -5,11 +5,26 @@ using UnityEngine;
 
 public class UniqueKey : MonoBehaviour
 {
-    public string Key;
+    
+    
+    public string Id;
+    
+    
+    static Dictionary<string, UniqueKey> _usedIds = new Dictionary<string, UniqueKey>();
 
     private void OnValidate()
     {
-        if (string.IsNullOrWhiteSpace(Key))
-            Key = Guid.NewGuid().ToString();
+        if (string.IsNullOrWhiteSpace(Id))
+            Id = Guid.NewGuid().ToString();
+        while (_usedIds.TryGetValue(Id, out var usedKey))
+        {
+            if (usedKey == this)
+                return;
+
+            Id = Guid.NewGuid().ToString();
+
+        }
+        _usedIds.Add(Id, this);
+
     }
 }

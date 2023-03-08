@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour
         get
         {
             if (transform.root.TryGetComponent<UniqueKey>(out var uniqueKey))
-                return uniqueKey.Key + " - " + name;
+                return uniqueKey.Id + " - " + name;
             return transform.root.name + " - " + name;
 
         }
