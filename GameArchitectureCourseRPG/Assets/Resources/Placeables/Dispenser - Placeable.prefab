@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4359ee4989b47c647b2dda892efcc61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0129beb6-a261-4298-8d57-330440d676d7
+  Id: 16c8724c-c684-4e1c-beed-2b3eb7c1e4ba
 --- !u!1 &5888120873900231567
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 943620092474764998, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
       propertyPath: Id
-      value: 6976de53-276e-4020-9b7a-70b30dd97063
+      value: 86bd1122-f550-4ded-b9bd-f9cdcf0356eb
       objectReference: {fileID: 0}
     - target: {fileID: 943620092474764999, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
       propertyPath: m_RootOrder
@@ -453,8 +453,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dispenser - Placed
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 943620092474764998, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
 --- !u!1 &5888120873551994378 stripped
 GameObject:
