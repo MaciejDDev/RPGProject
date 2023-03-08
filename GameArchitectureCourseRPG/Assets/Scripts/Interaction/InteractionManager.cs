@@ -57,10 +57,10 @@ public class InteractionManager : MonoBehaviour
 
     public static void Bind(Interactable interactable)
     {
-        var data = _datas.FirstOrDefault(t => t.Name == interactable.name);
+        var data = _datas.FirstOrDefault(t => t.Key == interactable.Key);
         if (data == null)
         {
-            data = new InteractableData(); { data.Name = interactable.name; }
+            data = new InteractableData(); { data.Key = interactable.Key; }
             _datas.Add(data);
         }
         interactable.Bind(data);

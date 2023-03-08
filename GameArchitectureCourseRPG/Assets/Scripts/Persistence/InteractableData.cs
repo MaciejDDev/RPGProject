@@ -3,7 +3,7 @@
 [Serializable]
 public class InteractableData
 {
-    public string Name;
+    public string Key;
     public float TimeInteracted;
     public int InteractionCount;
 }

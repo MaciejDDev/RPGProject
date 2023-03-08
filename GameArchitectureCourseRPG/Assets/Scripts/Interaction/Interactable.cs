@@ -37,7 +37,16 @@ public class Interactable : MonoBehaviour
     public bool WasFullyInteracted => InteractionProgress >= 1f;
 
     public string ConditionMessage { get; private set; }
+    public string Key
+    {
+        get
+        {
+            if (transform.root == transform)
+                return name;
+            return transform.root.name + " - " + name;
 
+        }
+    }
     void Awake() => _allConditions = GetComponents<IMet>();
 
     IEnumerator Start()

@@ -24,6 +24,6 @@ public class StatEntry : MonoBehaviour
     void Update()
     {
         if (_toggleablePanel.IsVisible)
-        _value.SetText(_statData.Value.ToString());
+            _value.SetText(_statData.Value.ToString());
     }
 }
