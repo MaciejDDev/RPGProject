@@ -34,6 +34,8 @@ public class PlacementManager : MonoBehaviour
         Debug.Log($"Started placing item {itemSlot.Item}");
 
         _placeable = Instantiate(itemSlot.Item.PlaceablePrefab);
+        var uniqueKey = _placeable.GetComponent<UniqueKey>();
+        uniqueKey.GenerateRuntimePlacedKey();
         _placeable.transform.SetParent(transform);
 
     }
@@ -59,8 +61,11 @@ public class PlacementManager : MonoBehaviour
 
     void FinishPlacement()
     {
+
+        var uniqueKey = _placeable.GetComponent<UniqueKey>();
         _placeableDatas.Add(new PlaceableData()
         {
+            Key = uniqueKey.Id,
             PlaceablePrefab = _itemSlot.Item.PlaceablePrefab.name,
             Position = _placeable.transform.position,
             Rotation = _placeable.transform.rotation
@@ -85,7 +90,10 @@ public class PlacementManager : MonoBehaviour
             {
                 var placeable = Instantiate(prefab, placeableData.Position, placeableData.Rotation);
                 if (placeable != null)
+                {
                     placeable.Place();
+                    placeable.GetComponent<UniqueKey>().Id = placeableData.Key;
+                }
             }
             else
                 Debug.LogError($"Unable respawn placeable Item {placeableData.PlaceablePrefab} because prefab was not found");

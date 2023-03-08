@@ -195,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5888120873163540719}
   - component: {fileID: 5888120873163540716}
+  - component: {fileID: 8221418657074829829}
   m_Layer: 0
   m_Name: Dispenser - Placeable
   m_TagString: Untagged
@@ -237,6 +238,19 @@ MonoBehaviour:
   - {fileID: 5888120873020851838}
   _defaultColor: {r: 1, g: 1, b: 1, a: 1}
   _invalidColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &8221418657074829829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888120873163540717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4359ee4989b47c647b2dda892efcc61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0129beb6-a261-4298-8d57-330440d676d7
 --- !u!1 &5888120873900231567
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +453,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dispenser - Placed
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 943620092474764998, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
 --- !u!1 &5888120873551994378 stripped
 GameObject:
