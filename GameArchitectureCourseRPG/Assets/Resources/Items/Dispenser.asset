@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84d910855dab74488b2ec99c52c373d, type: 3}
   m_Name: Dispenser
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 31a91e4963cd4c748881fe1db7b63b97, type: 3}
+  Icon: {fileID: 21300000, guid: 221900e46a938c442bd3c4cbf2c46361, type: 3}
   Description: 
   MaxStackSize: 1
   PlaceablePrefab: {fileID: 5888120873163540716, guid: 34cc826fbb5bf2047b87898f03dac6ad, type: 3}
