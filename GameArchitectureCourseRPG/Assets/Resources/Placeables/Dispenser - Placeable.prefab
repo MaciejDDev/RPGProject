@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4359ee4989b47c647b2dda892efcc61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 16c8724c-c684-4e1c-beed-2b3eb7c1e4ba
+  Id: e078b9ef-42fd-42e8-95b9-cb28d232b797
 --- !u!1 &5888120873900231567
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +452,14 @@ PrefabInstance:
     - target: {fileID: 943620092474765048, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
       propertyPath: m_Name
       value: Dispenser - Placed
+      objectReference: {fileID: 0}
+    - target: {fileID: 943620092474765048, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388136632801341945, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
