@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 943620091462954613}
   - component: {fileID: 943620091462954611}
   - component: {fileID: 943620091462954612}
+  - component: {fileID: 7953584892224604845}
   m_Layer: 0
   m_Name: Dispense Interaction
   m_TagString: Untagged
@@ -50,9 +51,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: AddItemFromEvent
+      - m_Target: {fileID: 7953584892224604845}
+        m_TargetAssemblyTypeName: GiveItemInteraction, Assembly-CSharp
+        m_MethodName: GiveItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 83f7f4d1dd58cb549babbd61a1c081f9, type: 2}
@@ -130,6 +131,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7953584892224604845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943620091462954614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c1a27be310f54ca4874ad294a74f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943620092254236659
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +155,7 @@ GameObject:
   - component: {fileID: 943620092254236656}
   - component: {fileID: 943620092254236657}
   - component: {fileID: 943620092254236671}
+  - component: {fileID: 1999870196790795278}
   m_Layer: 0
   m_Name: Salvage Interaction
   m_TagString: Untagged
@@ -181,9 +195,9 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: AddItemFromEvent
+      - m_Target: {fileID: 1999870196790795278}
+        m_TargetAssemblyTypeName: GiveItemInteraction, Assembly-CSharp
+        m_MethodName: GiveItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: ac4ba35e7fd0b9842a21e53e3e099b38, type: 2}
@@ -252,6 +266,18 @@ MonoBehaviour:
   _requiredStatValue: 1
   _requiredStat: {fileID: 11400000, guid: e790b89fe10f2c94daf7cf21c76c88f7, type: 2}
   _skillupOnInteractionCompleted: 1
+--- !u!114 &1999870196790795278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943620092254236659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c1a27be310f54ca4874ad294a74f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943620092474765048
 GameObject:
   m_ObjectHideFlags: 0

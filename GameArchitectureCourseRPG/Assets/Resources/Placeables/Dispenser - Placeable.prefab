@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4359ee4989b47c647b2dda892efcc61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: e078b9ef-42fd-42e8-95b9-cb28d232b797
+  Id: e139991f-d130-49ac-9d47-ad33092bc177
 --- !u!1 &5888120873900231567
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,18 +393,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5888120873163540719}
     m_Modifications:
-    - target: {fileID: 943620091462954611, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
-      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 943620092254236656, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
-      propertyPath: OnInteractionCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 943620092474764998, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
-      propertyPath: Id
-      value: 86bd1122-f550-4ded-b9bd-f9cdcf0356eb
-      objectReference: {fileID: 0}
     - target: {fileID: 943620092474764999, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -452,14 +440,6 @@ PrefabInstance:
     - target: {fileID: 943620092474765048, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
       propertyPath: m_Name
       value: Dispenser - Placed
-      objectReference: {fileID: 0}
-    - target: {fileID: 943620092474765048, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2388136632801341945, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5008259d9afdbc54a963c10386a7c4ce, type: 3}

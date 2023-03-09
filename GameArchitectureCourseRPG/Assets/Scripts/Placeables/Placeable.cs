@@ -12,7 +12,13 @@ public class Placeable : MonoBehaviour
     [SerializeField] Color _invalidColor = Color.red;
     IValidatePlacement[] _validators;
 
-    void Awake() => _validators = GetComponents<IValidatePlacement>();
+    void Awake()
+    {
+        _validators = GetComponents<IValidatePlacement>();
+        _placedObject.SetActive(false);
+        _previewObject.SetActive(true);
+    }
+
     public bool IsPlacementValid {  get; private set; }
 
     public void Place()
