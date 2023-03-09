@@ -179,4 +179,6 @@ public class Interactable : MonoBehaviour
         if (_rerunLastInteractionCompletedOnGameLoad)
         OnLastInteractionCompleted?.Invoke();
     }
+
+    public bool IsBound() => _data != null;
 }
