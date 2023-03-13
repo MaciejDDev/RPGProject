@@ -461,6 +461,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!137 &28981136 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1277872261309420933, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &32955557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10923,6 +10928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+--- !u!137 &952246606 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3381291077895778269, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &957579324
 GameObject:
   m_ObjectHideFlags: 0
@@ -12130,6 +12140,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067144314}
   m_CullTransparentMesh: 1
+--- !u!137 &1109419341 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4410237341326445890, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1110540472
 GameObject:
   m_ObjectHideFlags: 0
@@ -12994,6 +13009,11 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!137 &1207284715 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5465584476361152085, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1213745703
 GameObject:
   m_ObjectHideFlags: 0
@@ -14270,6 +14290,11 @@ Transform:
   m_Father: {fileID: 798116990}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1373761938 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4946195220787098772, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1380927099
 GameObject:
   m_ObjectHideFlags: 0
@@ -15945,6 +15970,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527504879}
   m_CullTransparentMesh: 1
+--- !u!137 &1585119312 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 541216346277276679, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1593143366
 GameObject:
   m_ObjectHideFlags: 0
@@ -18702,6 +18732,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!137 &1718696631 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2557055556485273553, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1726490756
 GameObject:
   m_ObjectHideFlags: 0
@@ -19862,6 +19897,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 059f35c9-9e12-45a4-b456-559c053d0c32
+--- !u!137 &1799009965 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6369482408760972659, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+  m_PrefabInstance: {fileID: 932810759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1811865421
 GameObject:
   m_ObjectHideFlags: 0
@@ -20696,6 +20736,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
   m_PrefabInstance: {fileID: 932810759}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1929101355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929101347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed3d11d1f405474c8580db0eef2a09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Visuals:
+  - EquipmentSlotType: {fileID: 11400000, guid: 184b10617d0a09c4cbe8d04d3fdbb972, type: 2}
+    SkinnedMeshRenderers:
+    - {fileID: 1718696631}
+    - {fileID: 952246606}
+    - {fileID: 1799009965}
+    - {fileID: 28981136}
+  - EquipmentSlotType: {fileID: 11400000, guid: 8f9fd22b3a5b5674893968e31bc1843c, type: 2}
+    SkinnedMeshRenderers:
+    - {fileID: 1373761938}
+    - {fileID: 1585119312}
+    - {fileID: 1207284715}
+    - {fileID: 1109419341}
 --- !u!1001 &1938620409
 PrefabInstance:
   m_ObjectHideFlags: 0
