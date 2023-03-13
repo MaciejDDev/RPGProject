@@ -7,6 +7,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Item", fileName = "New Item")]
 public class Item : ScriptableObject
 {
+
+    public EquipmentSlotType EquipmentSlotType;
     public Sprite Icon;
 
     [Multiline(lines:3)]
