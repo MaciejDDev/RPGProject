@@ -9541,6 +9541,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.03286459
       objectReference: {fileID: 0}
+    - target: {fileID: -8819986826784506335, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9681,6 +9685,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.049075644
       objectReference: {fileID: 0}
+    - target: {fileID: -7324904602054250430, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Arm
+      objectReference: {fileID: 0}
+    - target: {fileID: -7067343630907241678, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Foot
+      objectReference: {fileID: 0}
     - target: {fileID: -7033732698917128588, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9737,6 +9749,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: -6250076149019478384, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
     - target: {fileID: -5796501329377715267, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -9745,6 +9761,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: -5795845215311118915, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: -4660350273367319191, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: -4507900262165122138, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
     - target: {fileID: -4402295517132564867, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -9753,6 +9781,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: -4310607499263764902, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Foot
+      objectReference: {fileID: 0}
     - target: {fileID: -3945697997394137561, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0038086113
@@ -9865,6 +9897,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: -3111170871272388349, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Leg
+      objectReference: {fileID: 0}
+    - target: {fileID: -2815194613554758484, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: -2746699526115710989, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Chest
+      objectReference: {fileID: 0}
     - target: {fileID: -2746442656352525255, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.019006371
@@ -9893,6 +9937,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.7581578
       objectReference: {fileID: 0}
+    - target: {fileID: -2712628997893105804, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
     - target: {fileID: -2463937203712872251, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.020486882
@@ -9920,6 +9968,18 @@ PrefabInstance:
     - target: {fileID: -2463937203712872251, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.05758228
+      objectReference: {fileID: 0}
+    - target: {fileID: -2422315340263230684, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: -2254504247542753893, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: -2234811440987334085, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Arm
       objectReference: {fileID: 0}
     - target: {fileID: -1968218294861386819, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9976,6 +10036,10 @@ PrefabInstance:
     - target: {fileID: -1702051378307001432, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.1411001
+      objectReference: {fileID: 0}
+    - target: {fileID: -1554193974251969968, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
       objectReference: {fileID: 0}
     - target: {fileID: -1505936833371958198, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10061,14 +10125,34 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: -1137414348868702924, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Foot
+      objectReference: {fileID: 0}
     - target: {fileID: -1118235887990569613, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: -829978743123463325, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
     - target: {fileID: -534248752789683727, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: -445369854190344026, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: -389866118642622912, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: -174176745975339065, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Foot
+      objectReference: {fileID: 0}
     - target: {fileID: -116197401912627291, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.013351915
@@ -10093,6 +10177,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.7505892
       objectReference: {fileID: 0}
+    - target: {fileID: -86507713681861924, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Chest
+      objectReference: {fileID: 0}
     - target: {fileID: 122055884879801126, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10105,10 +10193,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: 556653639686422033, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
     - target: {fileID: 812947928087963621, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: 815122810508181336, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Leg
+      objectReference: {fileID: 0}
     - target: {fileID: 908276781140129939, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0005105265
@@ -10333,6 +10429,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: 2930120420463613277, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Leg
+      objectReference: {fileID: 0}
     - target: {fileID: 3381291077895778269, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10389,6 +10489,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.033287168
       objectReference: {fileID: 0}
+    - target: {fileID: 3545728956024351961, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Arm
+      objectReference: {fileID: 0}
     - target: {fileID: 3788286017798701964, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10437,6 +10541,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: 5547403349807877874, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Controller
       value: 
@@ -10445,10 +10553,22 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5988881256312858879, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031234185488532555, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Leg
+      objectReference: {fileID: 0}
     - target: {fileID: 6116877125733485042, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: 6159819195323411483, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
     - target: {fileID: 6212311207899599805, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0019961419
@@ -10569,10 +10689,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.15207134
       objectReference: {fileID: 0}
+    - target: {fileID: 6698890871181858397, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
     - target: {fileID: 6824376537820298744, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: 6877660047810643906, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Chest
+      objectReference: {fileID: 0}
     - target: {fileID: 7283926608909232706, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0035284113
@@ -10605,6 +10733,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+    - target: {fileID: 7922728145121898412, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Arm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963189301177548054, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Chest
+      objectReference: {fileID: 0}
     - target: {fileID: 8013474581577837863, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.01001393
@@ -10660,6 +10796,22 @@ PrefabInstance:
     - target: {fileID: 8121468002014783815, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.15110692
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144394004440419581, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Left Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153636686374230145, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267885997956261659, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Right Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382769772749705447, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
+      propertyPath: m_Name
+      value: Waist
       objectReference: {fileID: 0}
     - target: {fileID: 8384559320909990301, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
       propertyPath: m_LocalPosition.x
