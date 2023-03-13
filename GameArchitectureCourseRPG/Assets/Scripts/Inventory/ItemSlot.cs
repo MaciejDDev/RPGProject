@@ -65,6 +65,17 @@ public class ItemSlot
         else
             Changed?.Invoke();
     }
+
+    public bool CanHold(Item item)
+    {
+        if (item == null) 
+            return true;
+
+        if ( EquipmentSlotType != null && item.EquipmentSlotType != EquipmentSlotType)
+            return false;
+        
+        return true;
+    }
 }
 
 [Serializable]

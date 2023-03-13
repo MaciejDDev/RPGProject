@@ -194,6 +194,12 @@ public class Inventory : MonoBehaviour
 
     public void Swap(ItemSlot sourceSlot, ItemSlot targetSlot)
     {
+        if (!sourceSlot.CanHold(targetSlot.Item) || !targetSlot.CanHold(sourceSlot.Item))
+        {
+            Debug.Log(" Unable to swap Items, one slot can not hold the other item");
+            return;
+        }
+
         if (targetSlot == TopOverflowSlot)
             Debug.LogError("You can't drag items onto the overflow inventory");
         else if (targetSlot != null && 
