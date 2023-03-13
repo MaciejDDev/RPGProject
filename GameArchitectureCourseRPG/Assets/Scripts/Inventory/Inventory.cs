@@ -14,14 +14,18 @@ public class Inventory : MonoBehaviour
     public ItemSlot[] GeneralSlots = new ItemSlot[GENERAL_SIZE];
     public ItemSlot[] CraftingSlots = new ItemSlot[CRAFTING_SIZE];
     public List<ItemSlot> OverflowSlots= new List<ItemSlot>();
+    public List<ItemSlot> EquipmentSlots = new List<ItemSlot>();
     
     [SerializeField] Item _debugItem;
     List<SlotData> _slotDatas;
+    [SerializeField] EquipmentSlotType[] _allEquipmentSlotTypes;
 
     public static Inventory Instance { get; private set; }
     public ItemSlot TopOverflowSlot => OverflowSlots?.FirstOrDefault();
 
-    private void Awake()
+
+    void OnValidate() => _allEquipmentSlotTypes = Extensions.GetAllInstances<EquipmentSlotType>();
+    void Awake()
     {
         Instance = this;
         for (int i = 0; i < GENERAL_SIZE; i++)
@@ -31,6 +35,12 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < CRAFTING_SIZE; i++)
         {
             CraftingSlots[i] = new ItemSlot();
+        }
+
+        foreach (var slotType in _allEquipmentSlotTypes)
+        {
+            var slot = new ItemSlot(slotType);
+            EquipmentSlots.Add(slot);
         }
     }
 
@@ -202,6 +212,10 @@ public class Inventory : MonoBehaviour
             sourceSlot.Swap(targetSlot);
     }
 
+    public ItemSlot GetEquipmentSlot(EquipmentSlotType equipmentSlotType)
+    {
+        return EquipmentSlots.FirstOrDefault(t => t.EquipmentSlotType == equipmentSlotType);
+    }
 }
 
 public enum InventoryType

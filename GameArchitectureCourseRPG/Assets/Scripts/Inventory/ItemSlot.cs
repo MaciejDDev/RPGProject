@@ -4,17 +4,21 @@ using UnityEngine;
 [Serializable]
 public class ItemSlot
 {
+    public ItemSlot() { }
+    public ItemSlot(EquipmentSlotType equipmentSlotType)
+    {
+        EquipmentSlotType = equipmentSlotType;
+    }
+
     SlotData _slotData;
 
     public Item Item;
     public event Action Changed;
     public bool IsEmpty => Item == null;
-
     public bool HasStackSpaceAvailable => _slotData.StackCount < Item.MaxStackSize;
-
     public int StackCount => _slotData.StackCount;
-
     public int AvailableStackSpace => this.Item != null ? Item.MaxStackSize - _slotData.StackCount : 0;
+    public readonly EquipmentSlotType EquipmentSlotType;
 
     public void SetItem(Item item, int stackCount = 1)
     {
