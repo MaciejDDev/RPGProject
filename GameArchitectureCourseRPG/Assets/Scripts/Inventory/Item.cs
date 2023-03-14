@@ -10,6 +10,7 @@ public class Item : ScriptableObject
 
     public EquipmentSlotType EquipmentSlotType;
     public Material EquipMaterial;
+    public string ModelName;
     public Sprite Icon;
 
     [Multiline(lines:3)]

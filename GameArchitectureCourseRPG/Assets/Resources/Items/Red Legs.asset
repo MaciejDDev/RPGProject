@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EquipmentSlotType: {fileID: 11400000, guid: 8f9fd22b3a5b5674893968e31bc1843c, type: 2}
   EquipMaterial: {fileID: 2100000, guid: 806f93679e3a8a441b5eb92690b117a1, type: 2}
+  ModelName: 
   Icon: {fileID: 21300000, guid: 668f0a63efd73924f9621b9e68ed2459, type: 3}
   Description: 
   MaxStackSize: 0
