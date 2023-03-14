@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class StatEffectArea : MonoBehaviour
 {
-    [SerializeField] Stat _stat;
-    [SerializeField] int _amount;
+    [SerializeField] List<StatMod> _statMods = new List<StatMod>();
+
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"));
-        return;
+        if (!other.CompareTag("Player"))
+            return;
 
-        StatsManager.Instance.Modify(_stat, _amount);
+        StatsManager.Instance.AddStatMods(_statMods);
     
     }
 
 
     void OnTriggerExit(Collider other)
     {
-        
+        StatsManager.Instance.RemoveStatMods(_statMods);
+
     }
 }

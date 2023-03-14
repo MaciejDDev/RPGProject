@@ -6423,8 +6423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a436a085973e1a04f88c72fd6a10e027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stat: {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
-  _amount: 4
+  _statMods:
+  - Value: -5
+    StatType: {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
 --- !u!65 &640482160
 BoxCollider:
   m_ObjectHideFlags: 0

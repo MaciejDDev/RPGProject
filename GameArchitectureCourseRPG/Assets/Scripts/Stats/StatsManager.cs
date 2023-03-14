@@ -7,7 +7,8 @@ public class StatsManager : MonoBehaviour
 {
     [SerializeField]  Stat[] _allStats;
 
-    Dictionary<Stat, StatData> _myStats = new Dictionary<Stat, StatData>();
+    Dictionary<Stat, StatData> _myStatDatas = new Dictionary<Stat, StatData>();
+    Dictionary<Stat, List<StatMod>> _myStatMods = new Dictionary<Stat, List<StatMod>>();
     List<StatData> _statDatas;
 
 
@@ -18,10 +19,15 @@ public class StatsManager : MonoBehaviour
 
     public int GetStatValue(Stat stat)
     {
-        if (_myStats.TryGetValue(stat, out var statData)) 
-            return statData.Value;
         
-        return 0;
+        int modValue = 0;
+        if (_myStatMods.ContainsKey(stat))
+            modValue = _myStatMods[stat].Sum(t => t.Value);
+
+        if (_myStatDatas.TryGetValue(stat, out var statData)) 
+            return statData.Value + modValue;
+        
+        return modValue;
     }
 
     public void Bind(List<StatData> statDatas)
@@ -32,13 +38,13 @@ public class StatsManager : MonoBehaviour
             var data = _statDatas.FirstOrDefault(t => t.Name == stat.name);
             if (data != null)
             {
-                _myStats[stat] = data;
+                _myStatDatas[stat] = data;
             }
             else
             {
                 var statData = new StatData { Value = stat.DefaultValue, Name = stat.name };
                 _statDatas.Add(statData);
-                _myStats[stat] = statData;
+                _myStatDatas[stat] = statData;
             }
         }
         Bound = true;
@@ -46,7 +52,7 @@ public class StatsManager : MonoBehaviour
 
     public void Modify(Stat stat, int amount)
     {
-        if(_myStats.TryGetValue(stat, out var statData))
+        if(_myStatDatas.TryGetValue(stat, out var statData))
         {
             statData.Value += amount;
         }
@@ -54,6 +60,26 @@ public class StatsManager : MonoBehaviour
 
     public IEnumerable<StatData> GetAll()
     {
-        return _myStats.Values;
+        return _myStatDatas.Values;
+    }
+
+    public void AddStatMods(List<StatMod> statMods)
+    {
+        foreach (var statMod in statMods)
+        {
+            if (_myStatMods.TryGetValue(statMod.StatType, out var existingMods))
+                existingMods.Add(statMod);
+            else
+                _myStatMods.Add(statMod.StatType, new List<StatMod> { statMod });
+        }
+    }
+
+    public void RemoveStatMods(List<StatMod> statMods)
+    {
+        foreach (var statMod in statMods)
+        {
+            if (_myStatMods.TryGetValue(statMod.StatType, out var existingMods))
+                existingMods.Remove(statMod);
+        }
     }
 }
