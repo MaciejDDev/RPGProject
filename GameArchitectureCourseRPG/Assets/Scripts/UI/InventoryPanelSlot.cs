@@ -25,6 +25,12 @@ public class InventoryPanelSlot : MonoBehaviour,
 
 
     public EquipmentSlotType EquipmentSlotType => _equipmentSlotType;
+
+    private void OnValidate()
+    {
+        _itemIcon.sprite = _equipmentSlotType?.DefaultSprite;
+        _itemIcon.enabled = _itemIcon.sprite != null;
+    }
     public void Bind(ItemSlot itemSlot)
     {
         _itemSlot = itemSlot;
@@ -86,8 +92,8 @@ public class InventoryPanelSlot : MonoBehaviour,
         else
         {
             _stackCountText.enabled = false;
-            _itemIcon.sprite = null;
-            _itemIcon.enabled = false;
+            _itemIcon.sprite = _equipmentSlotType?.DefaultSprite;
+            _itemIcon.enabled = _itemIcon.sprite != null;
         }
     }
 

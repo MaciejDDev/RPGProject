@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName ="Equipment Slot Type")]
+[CreateAssetMenu(menuName = "Equipment Slot Type")]
 public class EquipmentSlotType : ScriptableObject
 {
-    
+    public Sprite DefaultSprite;
 }

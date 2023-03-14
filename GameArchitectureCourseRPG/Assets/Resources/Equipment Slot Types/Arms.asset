@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4decb97a71fff4bb240910dd7e4495, type: 3}
   m_Name: Arms
   m_EditorClassIdentifier: 
+  DefaultSprite: {fileID: 21300000, guid: ce847fbb2baf409499290099ca8640fd, type: 3}
