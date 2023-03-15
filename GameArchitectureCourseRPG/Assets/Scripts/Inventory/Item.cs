@@ -8,7 +8,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
 
-    public EquipmentSlotType EquipmentSlotType;
+    public List<EquipmentSlotType> EquipmentSlotTypes;
     public Material EquipMaterial;
     public string ModelName;
     

@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84d910855dab74488b2ec99c52c373d, type: 3}
   m_Name: Green Legs
   m_EditorClassIdentifier: 
-  EquipmentSlotType: {fileID: 11400000, guid: 8f9fd22b3a5b5674893968e31bc1843c, type: 2}
+  EquipmentSlotTypes:
+  - {fileID: 11400000, guid: 8f9fd22b3a5b5674893968e31bc1843c, type: 2}
   EquipMaterial: {fileID: 2100000, guid: d067d9cdfd029884592e2a397c269132, type: 2}
+  ModelName: 
   Icon: {fileID: 21300000, guid: 3bd2e84cc8484af4aa8667945158cf99, type: 3}
   Description: 
   MaxStackSize: 0
   PlaceablePrefab: {fileID: 0}
+  StatMods: []
