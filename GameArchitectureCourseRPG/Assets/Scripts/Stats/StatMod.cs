@@ -4,5 +4,5 @@
 public class StatMod
 {
     public int Value;
-    public Stat StatType;
+    public StatType StatType;
 }

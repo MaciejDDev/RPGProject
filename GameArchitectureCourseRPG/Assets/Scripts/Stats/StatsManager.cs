@@ -1,87 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class StatsManager : MonoBehaviour
 {
-    [SerializeField]  Stat[] _allStats;
+    [SerializeField]  StatType[] _allStatTypes;
 
-    Dictionary<Stat, StatData> _myStatDatas = new Dictionary<Stat, StatData>();
-    Dictionary<Stat, List<StatMod>> _myStatMods = new Dictionary<Stat, List<StatMod>>();
+    //Dictionary<StatType, StatData> _myStatDatas = new Dictionary<StatType, StatData>();
+    //Dictionary<StatType, List<StatMod>> _myStatMods = new Dictionary<StatType, List<StatMod>>();
+    Dictionary<StatType, Stat> _stats = new Dictionary<StatType, Stat>();
     List<StatData> _statDatas;
 
 
     public bool Bound { get; private set; }
     public static StatsManager Instance { get; private set; }
-    void OnValidate() => _allStats = Extensions.GetAllInstances<Stat>();
+    void OnValidate() => _allStatTypes = Extensions.GetAllInstances<StatType>();
     void Awake() => Instance = this;
 
-    public int GetStatValue(Stat stat)
+    public int GetStatValue(StatType StatType)
     {
-        var totalValue = 0;
-        int modValue = 0;
-        if (_myStatMods.ContainsKey(stat))
-            modValue = _myStatMods[stat].Sum(t => t.Value);
+        var stat = GetStat(StatType);
+        return stat.GetValue();
+    }
 
-        if (_myStatDatas.TryGetValue(stat, out var statData)) 
-            totalValue = statData.Value + modValue + stat.DefaultValue;
-        else
-            totalValue = modValue + stat.DefaultValue;
-
-        return Math.Max(totalValue, stat.MinimumValue);
+    Stat GetStat(StatType statType)
+    {
+        return _stats[statType];
     }
 
     public void Bind(List<StatData> statDatas)
     {
         _statDatas = statDatas;
-        foreach (var stat in _allStats)
+        foreach (var statType in _allStatTypes)
         {
-            var data = _statDatas.FirstOrDefault(t => t.Name == stat.name);
-            if (data != null)
+            var data = _statDatas.FirstOrDefault(t => t.Name == statType.name);
+            if (data == null)
             {
-                _myStatDatas[stat] = data;
-            }
-            else
-            {
-                var statData = new StatData { Value = 0, Name = stat.name };
+                var statData = new StatData { Value = 0, Name = statType.name };
                 _statDatas.Add(statData);
-                _myStatDatas[stat] = statData;
             }
+            _stats.Add(statType, new Stat(statType, data));
         }
         Bound = true;
     }
 
-    public void Modify(Stat stat, int amount)
+    public void Modify(StatType statType, int amount)
     {
-        if(_myStatDatas.TryGetValue(stat, out var statData))
-        {
-            statData.Value += amount;
-        }
+        GetStat(statType).ModifyStatData(amount);
     }
 
-    public IEnumerable<StatData> GetAll()
+    public IEnumerable<Stat> GetAll()
     {
-        return _myStatDatas.Values;
+        return _stats.Values;
     }
 
     public void AddStatMods(List<StatMod> statMods)
     {
         foreach (var statMod in statMods)
-        {
-            if (_myStatMods.TryGetValue(statMod.StatType, out var existingMods))
-                existingMods.Add(statMod);
-            else
-                _myStatMods.Add(statMod.StatType, new List<StatMod> { statMod });
-        }
+            GetStat(statMod.StatType).AddStatMod(statMod);
     }
 
     public void RemoveStatMods(List<StatMod> statMods)
     {
         foreach (var statMod in statMods)
-        {
-            if (_myStatMods.TryGetValue(statMod.StatType, out var existingMods))
-                existingMods.Remove(statMod);
-        }
+            GetStat(statMod.StatType).RemoveStatMod(statMod);
     }
 }

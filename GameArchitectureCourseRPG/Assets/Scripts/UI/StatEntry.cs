@@ -10,13 +10,13 @@ public class StatEntry : MonoBehaviour
     [SerializeField] TMP_Text _value;
     
     
-    StatData _statData;
+    Stat _stat;
     ToggleablePanel _toggleablePanel;
 
-    public void Bind(StatData statData)
+    public void Bind(Stat statData)
     {
-        _statData = statData;
-        _name.SetText(_statData.Name);
+        _stat = statData;
+        _name.SetText(_stat.Name);
     }
 
     void Awake() => _toggleablePanel = GetComponentInParent<ToggleablePanel>();
@@ -24,6 +24,6 @@ public class StatEntry : MonoBehaviour
     void Update()
     {
         if (_toggleablePanel.IsVisible)
-            _value.SetText(_statData.Value.ToString());
+            _value.SetText(_stat.GetValue().ToString());
     }
 }
