@@ -137,7 +137,7 @@ public class Inventory : MonoBehaviour
             CreateOverFlowSlot();
 
 
-        TopOverflowSlot.Changed += () =>
+        TopOverflowSlot.Changed += (Item added, Item removed) =>
         {
             if (TopOverflowSlot.IsEmpty && OverflowSlots.Any(t => !t.IsEmpty))
                 MoveOverflowItemsUp();

@@ -13,7 +13,7 @@ public class ItemSlot
     SlotData _slotData;
 
     public Item Item;
-    public event Action Changed;
+    public event Action<Item, Item> Changed;
     public bool IsEmpty => Item == null;
     public bool HasStackSpaceAvailable => _slotData.StackCount < Item.MaxStackSize;
     public int StackCount => _slotData.StackCount;
@@ -27,18 +27,17 @@ public class ItemSlot
         _slotData.ItemName = item?.name ?? string.Empty;
         _slotData.StackCount = stackCount;
         
-        Changed?.Invoke();
+        Changed?.Invoke(Item, previousItem);
 
     }
 
     public void Bind(SlotData slotData)
     {
+        var previousItem = Item;
         _slotData = slotData;
         var item = Resources.Load<Item>(path: "Items/" + _slotData.ItemName);
-
-        Item = item;
-        Changed?.Invoke();
-
+        Item = item;        
+        Changed?.Invoke(Item, previousItem);
         //SetItem(item);
         //SetItem();
     }
@@ -63,7 +62,7 @@ public class ItemSlot
         if (_slotData.StackCount <= 0)
             SetItem(null);
         else
-            Changed?.Invoke();
+            Changed?.Invoke(Item,Item);
     }
 
     public bool CanHold(Item item)

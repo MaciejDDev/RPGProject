@@ -19,3 +19,6 @@ MonoBehaviour:
   Description: 
   MaxStackSize: 0
   PlaceablePrefab: {fileID: 0}
+  StatMods:
+  - Value: 3
+    StatType: {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}

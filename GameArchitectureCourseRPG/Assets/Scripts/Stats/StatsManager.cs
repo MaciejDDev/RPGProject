@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -18,16 +19,30 @@ public class StatsManager : MonoBehaviour
     void OnValidate() => _allStatTypes = Extensions.GetAllInstances<StatType>();
     void Awake() => Instance = this;
 
-    public int GetStatValue(StatType StatType)
+    void Start()
     {
-        var stat = GetStat(StatType);
-        return stat.GetValue();
+        foreach (var slot in Inventory.Instance.EquipmentSlots)
+        {
+            slot.Changed += HandleEquipSlotChanged;
+        }    
     }
 
-    Stat GetStat(StatType statType)
+    void HandleEquipSlotChanged(Item added, Item removed)
     {
-        return _stats[statType];
+        if (added == removed)
+            return;
+
+        if(removed)
+            foreach (var statMod in removed.StatMods)
+                GetStat(statMod.StatType).RemoveStatMod(statMod);
+        if (added)
+            foreach (var statMod in added.StatMods)
+                GetStat(statMod.StatType).AddStatMod(statMod);
     }
+
+    public int GetStatValue(StatType StatType) => GetStat(StatType).GetValue();
+
+    Stat GetStat(StatType statType) => _stats[statType];
 
     public void Bind(List<StatData> statDatas)
     {
@@ -45,15 +60,9 @@ public class StatsManager : MonoBehaviour
         Bound = true;
     }
 
-    public void Modify(StatType statType, int amount)
-    {
-        GetStat(statType).ModifyStatData(amount);
-    }
+    public void Modify(StatType statType, int amount) => GetStat(statType).ModifyStatData(amount);
 
-    public IEnumerable<Stat> GetAll()
-    {
-        return _stats.Values;
-    }
+    public IEnumerable<Stat> GetAll() => _stats.Values;
 
     public void AddStatMods(List<StatMod> statMods)
     {

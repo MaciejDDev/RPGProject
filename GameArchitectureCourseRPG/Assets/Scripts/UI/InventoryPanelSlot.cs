@@ -34,7 +34,7 @@ public class InventoryPanelSlot : MonoBehaviour,
     public void Bind(ItemSlot itemSlot)
     {
         _itemSlot = itemSlot;
-        _itemSlot.Changed += UpdateIconAndStackSize;
+        _itemSlot.Changed += (Item added ,Item removed) => UpdateIconAndStackSize();
         UpdateIconAndStackSize();
     }
 

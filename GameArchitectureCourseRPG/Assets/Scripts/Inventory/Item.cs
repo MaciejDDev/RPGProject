@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     public EquipmentSlotType EquipmentSlotType;
     public Material EquipMaterial;
     public string ModelName;
+    
     public Sprite Icon;
 
     [Multiline(lines:3)]
@@ -19,6 +20,8 @@ public class Item : ScriptableObject
     public int MaxStackSize;
 
     public Placeable PlaceablePrefab;
+
+    public List<StatMod> StatMods;
 
     [ContextMenu("Add 1")]
     public void Add1() => Inventory.Instance.AddItem(this);
