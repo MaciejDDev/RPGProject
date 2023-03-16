@@ -65,7 +65,7 @@ public class StatsManager : MonoBehaviour
             var data = _statDatas.FirstOrDefault(t => t.Name == statType.name);
             if (data == null)
             {
-                data = new StatData { Value = 0, Name = statType.name };
+                data = new StatData { Value = statType.DefaultValue, Name = statType.name };
                 _statDatas.Add(data);
             }
             _stats.Add(statType, new Stat(statType, data));
@@ -73,7 +73,10 @@ public class StatsManager : MonoBehaviour
         Bound = true;
     }
 
-    public void Modify(StatType statType, float amount) => GetStat(statType).ModifyStatData(amount);
+    public void Modify(StatType statType, float amount)
+    {
+        GetStat(statType).ModifyStatData(amount);
+    }
 
     public IEnumerable<Stat> GetAll() => _stats.Values;
 

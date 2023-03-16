@@ -21,7 +21,7 @@ public class Stat
 
     public float GetValue()
     {
-        var totalValue = _mods.Sum(t => t.Value) + StatType.DefaultValue + _statData.Value;
+        var totalValue = _mods.Sum(t => t.Value) + _statData.Value;
         totalValue = Math.Max(totalValue, StatType.MinimumValue);
         if (StatType.AllowedDecimals < 1)
             return Mathf.RoundToInt(totalValue);
@@ -41,6 +41,14 @@ public class Stat
 
     public void ModifyStatData(float amount)
     {
-        _statData.Value += amount;
+        var newValue = _statData.Value + amount;
+        if (StatType.Maximum != null)
+        {
+            var maxValue = StatsManager.Instance.GetStatValue(StatType.Maximum);
+            if (newValue > maxValue) 
+                newValue = maxValue;
+        }
+
+        _statData.Value = newValue;
     }
 }
