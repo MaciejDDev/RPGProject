@@ -4,5 +4,5 @@
 public class StatData
 {
     public string Name;
-    public int Value;
+    public float Value;
 }

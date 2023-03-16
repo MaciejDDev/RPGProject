@@ -13,9 +13,9 @@ public class StatEntry : MonoBehaviour
     Stat _stat;
     ToggleablePanel _toggleablePanel;
 
-    public void Bind(Stat statData)
+    public void Bind(Stat stat)
     {
-        _stat = statData;
+        _stat = stat;
         _name.SetText(_stat.Name);
     }
 
@@ -24,6 +24,9 @@ public class StatEntry : MonoBehaviour
     void Update()
     {
         if (_toggleablePanel.IsVisible)
-            _value.SetText(_stat.GetValue().ToString());
+        {
+            string format = "N" + _stat.StatType.AllowedDecimals;
+            _value.SetText(_stat.GetValue().ToString(format));
+        }
     }
 }

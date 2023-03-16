@@ -2604,6 +2604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allStatTypes:
+  - {fileID: 11400000, guid: e177cae24ab6b254f894ddb5cbc15b45, type: 2}
   - {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
   - {fileID: 11400000, guid: e790b89fe10f2c94daf7cf21c76c88f7, type: 2}
 --- !u!1 &215857218
@@ -21591,6 +21592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turnSpeed: 1000
   _moveSpeed: {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
+  _energy: {fileID: 11400000, guid: e177cae24ab6b254f894ddb5cbc15b45, type: 2}
 --- !u!136 &1929101350
 CapsuleCollider:
   m_ObjectHideFlags: 0

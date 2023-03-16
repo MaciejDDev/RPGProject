@@ -53,7 +53,7 @@ public class StatsManager : MonoBehaviour
             GetStat(statMod.StatType).AddStatMod(statMod);
     }
 
-    public int GetStatValue(StatType StatType) => GetStat(StatType).GetValue();
+    public float GetStatValue(StatType StatType) => GetStat(StatType).GetValue();
 
     Stat GetStat(StatType statType) => _stats[statType];
 
@@ -73,7 +73,7 @@ public class StatsManager : MonoBehaviour
         Bound = true;
     }
 
-    public void Modify(StatType statType, int amount) => GetStat(statType).ModifyStatData(amount);
+    public void Modify(StatType statType, float amount) => GetStat(statType).ModifyStatData(amount);
 
     public IEnumerable<Stat> GetAll() => _stats.Values;
 

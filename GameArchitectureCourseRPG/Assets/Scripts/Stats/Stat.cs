@@ -1,26 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class Stat
 {
-    StatType _statType;
+    public StatType StatType { get; private set; }
     StatData _statData;
     List<StatMod> _mods = new List<StatMod>();
 
-    public string Name => _statType.name;
+    public string Name => StatType.name;
+
 
     public Stat( StatType statType, StatData statData)
     {
         _statData = statData;
-        _statType = statType;
+        StatType = statType;
         
     }
 
-    public int GetValue()
+    public float GetValue()
     {
-        var totalValue = _mods.Sum(t => t.Value) + _statType.DefaultValue + _statData.Value;
-        return Math.Max(totalValue, _statType.MinimumValue);
+        var totalValue = _mods.Sum(t => t.Value) + StatType.DefaultValue + _statData.Value;
+        totalValue = Math.Max(totalValue, StatType.MinimumValue);
+        if (StatType.AllowedDecimals < 1)
+            return Mathf.RoundToInt(totalValue);
+
+        return totalValue;
     }
 
     public void AddStatMod(StatMod statMod)
@@ -33,7 +39,7 @@ public class Stat
         _mods.Remove(statMod);
     }
 
-    public void ModifyStatData(int amount)
+    public void ModifyStatData(float amount)
     {
         _statData.Value += amount;
     }
