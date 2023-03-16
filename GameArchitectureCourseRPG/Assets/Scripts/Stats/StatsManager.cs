@@ -65,8 +65,8 @@ public class StatsManager : MonoBehaviour
             var data = _statDatas.FirstOrDefault(t => t.Name == statType.name);
             if (data == null)
             {
-                var statData = new StatData { Value = 0, Name = statType.name };
-                _statDatas.Add(statData);
+                data = new StatData { Value = 0, Name = statType.name };
+                _statDatas.Add(data);
             }
             _stats.Add(statType, new Stat(statType, data));
         }
