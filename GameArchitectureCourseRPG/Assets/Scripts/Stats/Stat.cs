@@ -48,6 +48,8 @@ public class Stat
             if (newValue > maxValue) 
                 newValue = maxValue;
         }
+        if (newValue < StatType.MinimumValue)
+            newValue = StatType.MinimumValue;
 
         _statData.Value = newValue;
     }
