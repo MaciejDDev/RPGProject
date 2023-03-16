@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af5ad6033ca62b446a7ac8f99394a88e, type: 3}
-  m_Name: Energy
+  m_Name: Max Energy
   m_EditorClassIdentifier: 
   AllowedDecimals: 2
   DefaultValue: 100
   MinimumValue: 0
-  Maximum: {fileID: 11400000, guid: 93a907648cd75094d8b52415852786c4, type: 2}

@@ -2605,6 +2605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allStatTypes:
   - {fileID: 11400000, guid: e177cae24ab6b254f894ddb5cbc15b45, type: 2}
+  - {fileID: 11400000, guid: 93a907648cd75094d8b52415852786c4, type: 2}
   - {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
   - {fileID: 11400000, guid: e790b89fe10f2c94daf7cf21c76c88f7, type: 2}
 --- !u!1 &215857218
@@ -6405,7 +6406,7 @@ GameObject:
   - component: {fileID: 640482162}
   - component: {fileID: 640482161}
   - component: {fileID: 640482160}
-  - component: {fileID: 640482159}
+  - component: {fileID: 640482164}
   m_Layer: 0
   m_Name: StatEffectArea
   m_TagString: Untagged
@@ -6413,21 +6414,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &640482159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 640482158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a436a085973e1a04f88c72fd6a10e027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _statMods:
-  - Value: -5
-    StatType: {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
 --- !u!65 &640482160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6461,7 +6447,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 774e1e875723a0d4ab1cde75e06ecf0b, type: 2}
+  - {fileID: 2100000, guid: a2c5390a2df13fb41b0a42fba04da4fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6506,6 +6492,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640482164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640482158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69b620e38c15a9468048560ea4c9e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stat: {fileID: 0}
+  _amountPerSecond: 0
 --- !u!1 &655484551
 GameObject:
   m_ObjectHideFlags: 0
