@@ -5338,6 +5338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Visuals: []
+  _inventory: {fileID: 0}
 --- !u!114 &484053807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5386,6 +5387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shoulders: {fileID: 2056904674}
   _mover: {fileID: 484053807}
+  _statsManager: {fileID: 484053811}
+  _inventory: {fileID: 0}
 --- !u!114 &484053811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5403,6 +5406,49 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 93a907648cd75094d8b52415852786c4, type: 2}
   - {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
   - {fileID: 11400000, guid: e790b89fe10f2c94daf7cf21c76c88f7, type: 2}
+  _inventory: {fileID: 0}
+--- !u!114 &484053812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484053804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78592883216c4bd4582f165847d1fe04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GeneralSlots:
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  CraftingSlots:
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  OverflowSlots: []
+  EquipmentSlots: []
+  _debugItem: {fileID: 0}
+  _allEquipmentSlotTypes:
+  - {fileID: 11400000, guid: fad0510c26e2366479fcf763b0436137, type: 2}
+  - {fileID: 11400000, guid: 184b10617d0a09c4cbe8d04d3fdbb972, type: 2}
+  - {fileID: 11400000, guid: 8f9fd22b3a5b5674893968e31bc1843c, type: 2}
+  - {fileID: 11400000, guid: 96d2449e90916d94b8d383f6f14dfacc, type: 2}
+  - {fileID: 11400000, guid: 2dfe24256d793ce47aeceb9be7f19af2, type: 2}
+  - {fileID: 11400000, guid: f668abf94b8b2134088bf629026c8d48, type: 2}
 --- !u!1 &485484435
 GameObject:
   m_ObjectHideFlags: 0
@@ -15758,7 +15804,7 @@ MonoBehaviour:
   _gameData:
     GameFlagDatas: []
     InteractableDatas: []
-    SlotDatas: []
+    SharedSlotDatas: []
     PlaceableDatas: []
     PlayerDatas: []
 --- !u!4 &1358466459
@@ -22335,6 +22381,7 @@ MonoBehaviour:
     SkinnedMeshRenderers: []
     DefaultMaterial: {fileID: 0}
     VisualModelRoot: {fileID: 302080306}
+  _inventory: {fileID: 0}
 --- !u!114 &1929101357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22349,6 +22396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shoulders: {fileID: 180258522}
   _mover: {fileID: 1929101349}
+  _statsManager: {fileID: 1929101359}
+  _inventory: {fileID: 0}
 --- !u!114 &1929101359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22366,6 +22415,49 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 93a907648cd75094d8b52415852786c4, type: 2}
   - {fileID: 11400000, guid: f7689534e5fd14a40a704b2d4ad39b10, type: 2}
   - {fileID: 11400000, guid: e790b89fe10f2c94daf7cf21c76c88f7, type: 2}
+  _inventory: {fileID: 0}
+--- !u!114 &1929101360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929101347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78592883216c4bd4582f165847d1fe04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GeneralSlots:
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  CraftingSlots:
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  - Item: {fileID: 0}
+  OverflowSlots: []
+  EquipmentSlots: []
+  _debugItem: {fileID: 0}
+  _allEquipmentSlotTypes:
+  - {fileID: 11400000, guid: fad0510c26e2366479fcf763b0436137, type: 2}
+  - {fileID: 11400000, guid: 184b10617d0a09c4cbe8d04d3fdbb972, type: 2}
+  - {fileID: 11400000, guid: 8f9fd22b3a5b5674893968e31bc1843c, type: 2}
+  - {fileID: 11400000, guid: 96d2449e90916d94b8d383f6f14dfacc, type: 2}
+  - {fileID: 11400000, guid: 2dfe24256d793ce47aeceb9be7f19af2, type: 2}
+  - {fileID: 11400000, guid: f668abf94b8b2134088bf629026c8d48, type: 2}
 --- !u!1001 &1938620409
 PrefabInstance:
   m_ObjectHideFlags: 0

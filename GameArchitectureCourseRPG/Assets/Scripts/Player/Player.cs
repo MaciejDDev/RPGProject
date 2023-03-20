@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
     }
     public void Bind(PlayerData playerData)
     {
-        GetComponent<StatsManager>().Bind(playerData.StatDatas);
+        _statsManager.Bind(playerData.StatDatas);
+        _inventory.Bind(playerData.SlotDatas);
     }
 
     public void ToggleActive(bool state)
