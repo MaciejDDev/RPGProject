@@ -9,6 +9,8 @@ public class StatsPanel : ToggleablePanel
     [SerializeField] Transform _statPanel;
 
 
+
+
     
     IEnumerator Start()
     {

@@ -17,7 +17,11 @@ public class StatBar : MonoBehaviour
     }
     private void Update()
     {
-        var value = _statsManager.GetStatValue(_statType);
+        if (Player.ActivePlayer == null || Player.ActivePlayer.StatsManager == null)
+            return;    
+            
+        var value = Player.ActivePlayer.StatsManager.GetStatValue(_statType);
+        
         _valueText.SetText(value.ToString("N" + _statType.AllowedDecimals));
 
         var percent = value / _statsManager.GetStatValue(_statType.Maximum);
