@@ -37,10 +37,8 @@ public class Player : MonoBehaviour
         if (state)
         {
             ActivePlayer = this;
-            FindObjectOfType<StatsPanel>().Bind(_statsManager);
-            FindObjectOfType<CraftingPanel>().Bind(_inventory);
-            FindObjectOfType<EquipmentPanel>().Bind(_inventory);
-            FindObjectOfType<InventoryPanel>().Bind(_inventory);
+            UIManager.Instance.Bind(this);
+            
         }
     }
 }
