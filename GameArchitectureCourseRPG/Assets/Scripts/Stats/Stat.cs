@@ -8,12 +8,14 @@ public class Stat
     public StatType StatType { get; private set; }
     StatData _statData;
     List<StatMod> _mods = new List<StatMod>();
+    StatsManager _statsManager;
 
     public string Name => StatType.name;
 
 
-    public Stat( StatType statType, StatData statData)
+    public Stat( StatType statType, StatData statData, StatsManager statsManager)
     {
+        _statsManager = statsManager;
         _statData = statData;
         StatType = statType;
         
@@ -44,7 +46,7 @@ public class Stat
         var newValue = _statData.Value + amount;
         if (StatType.Maximum != null)
         {
-            var maxValue = StatsManager.Instance.GetStatValue(StatType.Maximum);
+            var maxValue = _statsManager.GetStatValue(StatType.Maximum);
             if (newValue > maxValue) 
                 newValue = maxValue;
         }

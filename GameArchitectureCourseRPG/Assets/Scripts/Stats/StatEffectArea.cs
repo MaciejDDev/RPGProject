@@ -12,14 +12,18 @@ public class StatEffectArea : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        StatsManager.Instance.AddStatMods(_statMods);
+        var statsManager = other.GetComponent<StatsManager>();
+        if (statsManager)
+        statsManager.AddStatMods(_statMods);
     
     }
 
 
     void OnTriggerExit(Collider other)
     {
-        StatsManager.Instance.RemoveStatMods(_statMods);
+        var statsManager = other.GetComponent<StatsManager>();
+        if (statsManager)
+            statsManager.RemoveStatMods(_statMods);
 
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class GamePersistence : MonoBehaviour
@@ -26,7 +27,19 @@ public class GamePersistence : MonoBehaviour
             _gameData = new GameData();
 
 
-        StatsManager.Instance.Bind(_gameData.StatDatas);
+        var players = FindObjectsOfType<Player>();
+        foreach( Player player in players )
+        {
+            var playerData = _gameData.PlayerDatas.FirstOrDefault(t => t.PlayerName == player.name);
+            if (playerData == null)
+            {
+                playerData = new PlayerData() { PlayerName = player.name };
+                _gameData.PlayerDatas.Add(playerData);
+            }
+            player.Bind(playerData);
+        }
+
+        //StatsManager.Instance.Bind(_gameData.StatDatas);
         Inventory.Instance.Bind(_gameData.SlotDatas);
         FlagManager.Instance.Bind(_gameData.GameFlagDatas);
         InteractionManager.Bind(_gameData.InteractableDatas);

@@ -15,9 +15,8 @@ public class StatsManager : MonoBehaviour
 
 
     public bool Bound { get; private set; }
-    public static StatsManager Instance { get; private set; }
     void OnValidate() => _allStatTypes = Extensions.GetAllInstances<StatType>();
-    void Awake() => Instance = this;
+    
 
     void Start()
     {
@@ -68,7 +67,7 @@ public class StatsManager : MonoBehaviour
                 data = new StatData { Value = statType.DefaultValue, Name = statType.name };
                 _statDatas.Add(data);
             }
-            _stats.Add(statType, new Stat(statType, data));
+            _stats.Add(statType, new Stat(statType, data, this));
         }
         Bound = true;
     }

@@ -29,12 +29,16 @@ public class InteractableStatCondition : MonoBehaviour, IMet
     void HandleInteractionCompleted()
     {
         if (_skillupOnInteractionCompleted)
-            StatsManager.Instance.Modify(_requiredStat, 1);
+        {
+            //StatsManager.Instance.Modify(_requiredStat, 1);
+
+        }
     }
 
     public bool Met()
     {
-        var statValue = StatsManager.Instance.GetStatValue(_requiredStat);
-        return statValue >= _requiredStatValue;
+        return true;
+        //var statValue = StatsManager.Instance.GetStatValue(_requiredStat);
+        //return statValue >= _requiredStatValue;
     }
 }
