@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     {
         _mover.enabled = state;
         if (state)
+        {
             ActivePlayer = this;
+            FindObjectOfType<StatsPanel>().Bind(_statsManager);
+        }
     }
 }

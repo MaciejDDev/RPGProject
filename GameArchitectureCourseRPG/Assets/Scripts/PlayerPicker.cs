@@ -14,7 +14,7 @@ public class PlayerPicker : MonoBehaviour
 
 
 
-    private void Start()
+    public void Initialize()
     {
 
         for (int i = 0; i < _players.Count; i++)

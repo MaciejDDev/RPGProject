@@ -7,26 +7,20 @@ public class StatsPanel : ToggleablePanel
 
     [SerializeField] StatEntry _statEntryPrefab;
     [SerializeField] Transform _statPanel;
+    List<StatEntry> _statEntries = new List<StatEntry>();
 
-
-
-
-    
-    IEnumerator Start()
+    public void Bind(StatsManager statsManager)
     {
-        var statsManager = FindObjectOfType<StatsManager>();
-        while (!statsManager.Bound)
-            yield return null;  
-     
+        foreach (var entry in _statEntries)
+            Destroy(entry.gameObject);
+        _statEntries.Clear();
+
         var allStats = statsManager.GetAll();
         foreach (var stat in allStats)
         {
             var statEntry = Instantiate(_statEntryPrefab, _statPanel);
             statEntry.Bind(stat);
+            _statEntries.Add(statEntry);
         }
     }
-
-
-
-
 }
