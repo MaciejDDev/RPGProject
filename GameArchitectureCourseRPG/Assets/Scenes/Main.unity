@@ -2090,7 +2090,7 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560338153}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: AddItemFromEvent
         m_Mode: 2
@@ -6037,80 +6037,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2221149739073251356, guid: 8247797b64ea331458c38fe4eac5472b, type: 3}
   m_PrefabInstance: {fileID: 932810759}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &560338152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 560338154}
-  - component: {fileID: 560338153}
-  m_Layer: 0
-  m_Name: '[INVENTORY]'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &560338153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560338152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78592883216c4bd4582f165847d1fe04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GeneralSlots:
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  CraftingSlots:
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  - Item: {fileID: 0}
-  OverflowSlots: []
-  EquipmentSlots: []
-  _debugItem: {fileID: 11400000, guid: 7710ac54465c4cf45a6ee1535afbb302, type: 2}
-  _allEquipmentSlotTypes:
-  - {fileID: 11400000, guid: fad0510c26e2366479fcf763b0436137, type: 2}
-  - {fileID: 11400000, guid: 184b10617d0a09c4cbe8d04d3fdbb972, type: 2}
-  - {fileID: 11400000, guid: 8f9fd22b3a5b5674893968e31bc1843c, type: 2}
-  - {fileID: 11400000, guid: 96d2449e90916d94b8d383f6f14dfacc, type: 2}
-  - {fileID: 11400000, guid: 2dfe24256d793ce47aeceb9be7f19af2, type: 2}
-  - {fileID: 11400000, guid: f668abf94b8b2134088bf629026c8d48, type: 2}
---- !u!4 &560338154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560338152}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 798116990}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &564823050
 GameObject:
   m_ObjectHideFlags: 0
@@ -6190,7 +6116,7 @@ MonoBehaviour:
   OnInteractionCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560338153}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
         m_MethodName: AddItemFromEvent
         m_Mode: 2
@@ -8341,7 +8267,6 @@ Transform:
   - {fileID: 1264137002}
   - {fileID: 1213745705}
   - {fileID: 503007710}
-  - {fileID: 560338154}
   - {fileID: 1358466459}
   - {fileID: 1261537967}
   m_Father: {fileID: 0}
@@ -14929,7 +14854,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 798116990}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1261537968
 MonoBehaviour:
@@ -15849,7 +15774,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 798116990}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1373761938 stripped
 SkinnedMeshRenderer:

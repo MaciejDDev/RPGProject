@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 public class StatsManager : MonoBehaviour
 {
     [SerializeField]  StatType[] _allStatTypes;
+    [SerializeField] Inventory _inventory;
 
     //Dictionary<StatType, StatData> _myStatDatas = new Dictionary<StatType, StatData>();
     //Dictionary<StatType, List<StatMod>> _myStatMods = new Dictionary<StatType, List<StatMod>>();
@@ -15,12 +16,15 @@ public class StatsManager : MonoBehaviour
 
 
     public bool Bound { get; private set; }
-    void OnValidate() => _allStatTypes = Extensions.GetAllInstances<StatType>();
-    
+    void OnValidate()
+    {
+        _allStatTypes = Extensions.GetAllInstances<StatType>();
+        _inventory = GetComponent<Inventory>();
+    }
 
     void Start()
     {
-        foreach (var slot in Inventory.Instance.EquipmentSlots)
+        foreach (var slot in _inventory.EquipmentSlots)
         {
             slot.Changed += HandleEquipSlotChanged;
 

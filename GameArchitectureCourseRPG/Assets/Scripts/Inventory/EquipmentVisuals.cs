@@ -7,8 +7,12 @@ using UnityEngine;
 public class EquipmentVisuals : MonoBehaviour
 {
     public List<EquipmentVisual> Visuals;
+    [SerializeField] Inventory _inventory;
 
-
+    private void OnValidate()
+    {
+        _inventory = GetComponent<Inventory>();
+    }
 
     void Start()
     {
@@ -16,7 +20,7 @@ public class EquipmentVisuals : MonoBehaviour
         foreach (var visual in Visuals)
             visual.DefaultMaterial = visual.SkinnedMeshRenderers.FirstOrDefault()?.material;
         
-        foreach (var slot in Inventory.Instance.EquipmentSlots)
+        foreach (var slot in _inventory.EquipmentSlots)
         {
             slot.Changed += (Item added, Item removed) => UpdateEquipmentVisual(slot);
             UpdateEquipmentVisual(slot);

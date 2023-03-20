@@ -10,18 +10,20 @@ public class Player : MonoBehaviour
 
     [SerializeField] Transform _shoulders;
     [SerializeField] ThirdPersonMover _mover;
-    StatsManager _statsManager;
+    [SerializeField] StatsManager _statsManager;
+    [SerializeField] Inventory _inventory;
 
     public Transform Shoulders => _shoulders;
 
     public StatsManager StatsManager => _statsManager;
 
-
+    public Inventory Inventory => _inventory;
 
     private void  OnValidate()
     {
         _mover = GetComponent<ThirdPersonMover>();
         _statsManager = GetComponent<StatsManager>();
+        _inventory = GetComponent<Inventory>();
     }
     public void Bind(PlayerData playerData)
     {
@@ -35,6 +37,9 @@ public class Player : MonoBehaviour
         {
             ActivePlayer = this;
             FindObjectOfType<StatsPanel>().Bind(_statsManager);
+            FindObjectOfType<CraftingPanel>().Bind(_inventory);
+            FindObjectOfType<EquipmentPanel>().Bind(_inventory);
+            FindObjectOfType<InventoryPanel>().Bind(_inventory);
         }
     }
 }

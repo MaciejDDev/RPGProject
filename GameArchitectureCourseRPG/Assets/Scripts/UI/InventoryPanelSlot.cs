@@ -72,7 +72,7 @@ public class InventoryPanelSlot : MonoBehaviour,
             _itemSlot.RemoveItem();
 
         if (!_itemSlot.IsEmpty && Focused != null)
-            Inventory.Instance.Swap( _itemSlot, Focused._itemSlot);
+            Player.ActivePlayer.Inventory.Swap( _itemSlot, Focused._itemSlot);
 
         _itemIcon.color = Color.white;
         _draggedItemIcon.sprite = null;
@@ -99,8 +99,8 @@ public class InventoryPanelSlot : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.GetKey(KeyCode.LeftShift) && _itemSlot.IsEmpty == false) 
-           Inventory.Instance.AddItem(_itemSlot.Item); 
+        if (Input.GetKey(KeyCode.LeftShift) && _itemSlot.IsEmpty == false)
+            Player.ActivePlayer.Inventory.AddItem(_itemSlot.Item); 
         ItemTooltipPanel.Instance.ShowItem(_itemSlot);
     }
 }

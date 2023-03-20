@@ -7,12 +7,6 @@ public class InventoryPanel : ToggleablePanel
 {
     [SerializeField] InventoryPanelSlot _overflowSlot;
 
-    IEnumerator Start()
-    {
-        yield return null;
-        Bind(Inventory.Instance);
-    }
-
     public void Bind(Inventory inventory)
     {
         var panelSlots = GetComponentsInChildren<InventoryPanelSlot>().Where(t => t != _overflowSlot).ToArray();

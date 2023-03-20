@@ -20,14 +20,13 @@ public class Inventory : MonoBehaviour
     List<SlotData> _slotDatas;
     [SerializeField] EquipmentSlotType[] _allEquipmentSlotTypes;
 
-    public static Inventory Instance { get; private set; }
     public ItemSlot TopOverflowSlot => OverflowSlots?.FirstOrDefault();
 
 
     void OnValidate() => _allEquipmentSlotTypes = Extensions.GetAllInstances<EquipmentSlotType>();
     void Awake()
     {
-        Instance = this;
+        
         for (int i = 0; i < GENERAL_SIZE; i++)
         {
             GeneralSlots[i] = new ItemSlot();

@@ -17,7 +17,7 @@ public class CraftingManager : MonoBehaviour
     public void TryCrafting()
     {
 
-        var itemsInCrafting = Inventory.Instance.CraftingSlots
+        var itemsInCrafting = Player.ActivePlayer.Inventory.CraftingSlots
             .Select(t => t.Item)
             .Where(t => t != null).ToList();
 
@@ -26,12 +26,12 @@ public class CraftingManager : MonoBehaviour
             if (AreListsMatching(recipe.Ingredients, itemsInCrafting) == false)
                 continue;
 
-            var rewards = IsMatchingRecipe(recipe, Inventory.Instance.CraftingSlots) ? recipe.Rewards : recipe.FallbackRewards;
-            
-            Inventory.Instance.ClearCraftingSlots();
+            var rewards = IsMatchingRecipe(recipe, Player.ActivePlayer.Inventory.CraftingSlots) ? recipe.Rewards : recipe.FallbackRewards;
+
+            Player.ActivePlayer.Inventory.ClearCraftingSlots();
 
             foreach (var reward in rewards)
-                Inventory.Instance.AddItem(reward, InventoryType.Crafting);
+                Player.ActivePlayer.Inventory.AddItem(reward, InventoryType.Crafting);
                 
             Debug.Log($"Crafted the recipe {recipe.name}");
             return;
